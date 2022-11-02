@@ -27,5 +27,11 @@
         --font-primary: "Kumbh Sans", "Arial", sans-serif;
         --font-secondary: "Bitter", "Georgia", serif;
         --font-monospace: "Roboto Mono", "Courier New", monospace;
+
+        --font-size: clamp(1.125rem, 1.5vw, 1.25rem);       /* 18px - 20px */
+        --font-size-xl: calc(var(--font-size) + 0.25rem);   /* 22px - 24px */
+        --font-size-lg: calc(var(--font-size) + 0.125rem);  /* 20px - 22px */
+        --font-size-sm: calc(var(--font-size) - 0.125rem);  /* 16px - 18px */
+        --font-size-xs: calc(var(--font-size) - 0.25rem);   /* 14px - 16px */
     }
 }
