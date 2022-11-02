@@ -60,7 +60,7 @@
 @layer layout {
     
     main {
-        width: 72ch;
+        max-width: 72ch;
     }
 }
 
