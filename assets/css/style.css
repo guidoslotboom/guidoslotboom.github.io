@@ -52,6 +52,30 @@
         font-weight: 700;
     }
 
+    h1 {
+        font-size: var(--base-size-xl);
+    }
+
+    h2 {
+        font-size: var(--base-size-lg);
+    }
+
+    h3 {
+        font-size: var(--base-size-md);
+    }
+
+    h4 {
+        font-size: var(--base-size-sm);
+    }
+
+    h5 {
+        font-size: var(--base-size-xs);
+    }
+
+    h6 {
+        font-size: var(--base-size-2xs);
+    }
+
     p {
         font-size: var(--font-size);
     }
@@ -65,6 +89,34 @@
 }
 
 @layer utilities {
+
+    .heading-2xs {
+        font-size: var(--heading-size-2xs);
+    }
+
+    .heading-xs {
+        font-size: var(--heading-size-xs);
+    }
+
+    .heading-sm {
+        font-size: var(--heading-size-sm);
+    }
+
+    .heading-md {
+        font-size: var(--heading-size);
+    }
+
+    .heading-lg {
+        font-size: var(--heading-size-lg);
+    }
+
+    .heading-xl {
+        font-size: var(--heading-size-xl);
+    }
+
+    .heading-2xl {
+        font-size: var(--heading-size-2xl);
+    }
 
     .text-xs {
         font-size: var(--font-size-xs);
