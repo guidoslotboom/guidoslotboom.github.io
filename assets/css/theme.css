@@ -34,14 +34,17 @@
         --font-size-lg: calc(var(--font-size) + 0.125rem);  /* 20px - 24px */
         --font-size-xl: calc(var(--font-size) + 0.25rem);   /* 22px - 26px */
 
-        --base-size-3xs: clamp(1rem, calc(1rem + 0.5vw), 1.25rem);       /* 16px - 20px */
-        --base-size-2xs: clamp(1.125rem, calc(1rem + 0.75vw), 1.5rem);   /* 18px - 24px */
-        --base-size-xs: clamp(1.25rem, calc(1rem + 1vw), 1.75rem);       /* 20px - 28px */
-        --base-size-sm: clamp(1.5rem, calc(1rem + 1.25vw), 2rem);        /* 24px - 32px */
-        --base-size-md: clamp(1.75rem, calc(1rem + 1.375vw), 2.25rem);   /* 28px - 36px */
-        --base-size-lg: clamp(2rem, calc(1rem + 2vw), 2.75rem);          /* 32px - 44px */
-        --base-size-xl: clamp(2.25rem, calc(1rem + 2.5vw), 3.5rem);      /* 36px - 56px */
-        --base-size-2xl: clamp(2.5rem, calc(1rem + 3.5vw), 4.5rem);      /* 40px - 72px */
-        --base-size-3xl: clamp(3rem, calc(1rem + 5vw), 6rem);            /* 48px - 96px */
+        --base-unit: 0.25rem;
+        --base-size-4xs: clamp(0.5rem, calc(var(--base-unit) + 0.5vw), 0.75rem);    /* 8px - 12px */
+        --base-size-3xs: clamp(0.75rem, calc(var(--base-unit) + 0.75vw), 1rem);     /* 12px - 16px */
+        --base-size-2xs: clamp(1rem, calc(var(--base-unit) + 1vw), 1.25rem);        /* 16px - 20px */
+        --base-size-xs: clamp(1.125rem, calc(var(--base-unit) + 1.25vw), 1.5rem);   /* 18px - 24px */
+        --base-size-sm: clamp(1.25rem, calc(var(--base-unit) + 1.5vw), 1.75rem);    /* 20px - 28px */
+        --base-size-md: clamp(1.5rem, calc(var(--base-unit) + 1.75vw), 2rem);       /* 24px - 32px */
+        --base-size-lg: clamp(1.75rem, calc(var(--base-unit) + 2vw), 2.25rem);      /* 28px - 36px */
+        --base-size-xl: clamp(2rem, calc(var(--base-unit) + 2.5vw), 2.75rem);       /* 32px - 44px */
+        --base-size-2xl: clamp(2.25rem, calc(var(--base-unit) + 3.25vw), 3.5rem);   /* 36px - 56px */
+        --base-size-3xl: clamp(2.5rem, calc(var(--base-unit) + 4.25vw), 4.5rem);    /* 40px - 72px */
+        --base-size-4xl: clamp(3rem, calc(var(--base-unit) + 5.75vw), 6rem);        /* 48px - 96px */
     }
 }

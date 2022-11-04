@@ -53,27 +53,27 @@
     }
 
     h1 {
-        font-size: var(--base-size-xl);
+        font-size: var(--base-size-2xl);
     }
 
     h2 {
-        font-size: var(--base-size-lg);
+        font-size: var(--base-size-xl);
     }
 
     h3 {
-        font-size: var(--base-size-md);
+        font-size: var(--base-size-lg);
     }
 
     h4 {
-        font-size: var(--base-size-sm);
+        font-size: var(--base-size-md);
     }
 
     h5 {
-        font-size: var(--base-size-xs);
+        font-size: var(--base-size-sm);
     }
 
     h6 {
-        font-size: var(--base-size-2xs);
+        font-size: var(--base-size-xs);
     }
 
     p {
