@@ -1,4 +1,4 @@
-@layer reset, base, layout;
+@layer reset, base, layout, components, utilities;
 
 @layer base {
 
@@ -76,8 +76,26 @@
         font-size: var(--base-size-xs);
     }
 
+    a, 
     p {
         font-size: var(--font-size);
+    }
+
+    a:link {
+        color: var(--secondary-20);
+        display: inline-block;
+        font-weight: 450;
+        transition: color 100ms ease-in;
+    }
+
+    a:hover {
+        color: var(--color-scheme-contrast);
+        text-underline-offset: 0.25rem;
+    }
+
+    a:focus {
+        outline-width: 0.125rem;
+        outline-color: var(--secondary-30);
     }
 }
 
@@ -93,6 +111,10 @@
 
     main > p + p {
         margin-top: var(--base-size-lg);
+    }
+
+    main > p + a {
+        margin-top: var(--base-size-sm);
     }
     
     main > h1 + * {
@@ -112,7 +134,147 @@
     }
 }
 
+@layer components {
+
+    [class*="button"] {
+        background-color: transparent;
+        border-radius: 3rem;
+        color: var(--primary-30);
+        transition: all 150ms ease-in;
+        position: relative;
+    }
+
+    .button:hover,
+    [class*="button"]:not(:has(span)):hover {
+        color: var(--primary-10);
+    }
+
+    :is(.button-primary, .button-secondary, .button-accent) {
+        padding: var(--base-size-3xs) var(--base-size-md);
+    }
+
+    :is(.button-primary, .button-secondary, .button-accent) span {
+        position: relative;
+    }
+
+    :is(.button-primary, .button-secondary, .button-accent):has(span) {
+        border-width: 0.125rem;
+        border-style: solid;
+        text-decoration: none;
+    }
+
+    :is(.button-primary, .button-secondary, .button-accent):has(span):before {
+        content: " ";
+        background-color: var(--button-background);
+        width: calc(100% - 0.25rem);
+        height: calc(100% - 0.25rem);
+        border-radius: 3rem;
+        margin: 0.125rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(0.75);
+        transition: all 150ms ease-in;
+    }
+
+    :is(.button-primary, .button-secondary, .button-accent):has(span):hover:before {
+        transform: scale(1);
+    }
+
+    /*** Button Primary ***/
+
+    .button-primary {
+        border-color: var(--primary-60);
+        color: var(--primary-30);
+    }
+
+    .button-primary:hover {
+        --button-background: var(--primary-50);
+        border-color: var(--primary-50);
+        color: var(--color-scheme-contrast);
+    }
+
+    .button-primary:active {
+        --button-background: var(--primary-60);
+        border-color: var(--primary-50);
+    }
+
+    /*** Button Secondary ***/
+
+    .button-secondary {
+        border-color: var(--secondary-30);
+        color: var(--secondary-10);
+    }
+
+    .button-secondary:hover {
+        --button-background: var(--secondary-20);
+        border-color: var(--secondary-20);
+        color: var(--color-scheme-base);
+    }
+
+    .button-secondary:active {
+        --button-background: var(--secondary-30);
+        border-color: var(--secondary-20);
+    }
+
+    /*** Button Accent ***/
+
+    .button-accent {
+        border-color: var(--accent-30);
+        color: var(--accent-10);
+    }
+
+    .button-accent:hover {
+        --button-background: var(--accent-20);
+        border-color: var(--accent-20);
+        color: var(--color-scheme-base);
+    }
+
+    .button-accent:active {
+        --button-background: var(--accent-30);
+        border-color: var(--accent-20);
+    }
+
+    /*** Button Specific Styles ***/
+
+    .button-stealth {
+        border-color: transparent;
+        text-decoration: underline;
+    }
+
+    .button-stealth:hover {
+        --button-background: var(--primary-50);
+        border-color: transparent;
+        color: var(--color-scheme-contrast);
+        text-decoration: none;
+    }
+
+    .button-stealth:active {
+        --button-background: var(--primary-60);
+    }
+
+    /*** Button Sizes ***/
+
+    .button-sm {
+        padding: var(--base-size-4xs) var(--base-size-2xs);
+        font-size: var(--font-size-sm);
+    }
+
+    .button-md {
+        padding: var(--base-size-3xs) var(--base-size-md);
+        font-size: var(--font-size);
+    }
+
+    .button-lg {
+        padding: var(--base-size-2xs) var(--base-size-xl);
+        font-size: var(--font-size-lg);
+    }
+
+}
+
 @layer utilities {
+
+    /*** Header Sizes ***/
 
     .heading-2xs {
         font-size: var(--heading-size-2xs);
@@ -141,6 +303,8 @@
     .heading-2xl {
         font-size: var(--heading-size-2xl);
     }
+
+    /*** Text Sizes ***/
 
     .text-xs {
         font-size: var(--font-size-xs);
