@@ -1,4 +1,4 @@
-@layer reset, base, layout, components, utilities;
+@layer reset, base, layout, components, utilities, overrides;
 
 @layer base {
 
@@ -100,37 +100,105 @@
 }
 
 @layer layout {
-    
-    main {
-        max-width: 76ch;
+
+    /*** Grid and Template Columns ***/
+
+    .grid-cols {
+        --col-min-width: 480px;
+        --col-gap: clamp(1.25rem, 4vw, 2rem);
+        --col-full: minmax(var(--col-gap), 1fr);
+        --col-xs: min(var(--col-min-width), 100% - var(--col-gap) * 2);
+        --col-sm: minmax(0, 5rem);
+        --col-md: minmax(0, 5rem);
+        --col-lg: minmax(0, 5rem);
+        --col-xl: minmax(0, 10rem);
+
+        display: grid;
+        grid-template-columns:
+            [col-full-start] var(--col-full)
+            [col-xl-start] var(--col-xl)
+            [col-lg-start] var(--col-lg)
+            [col-md-start] var(--col-md)
+            [col-sm-start] var(--col-sm)
+            [col-xs-start] var(--col-xs) [col-xs-end]
+            var(--col-sm) [col-sm-end]
+            var(--col-md) [col-md-end]
+            var(--col-lg) [col-lg-end]
+            var(--col-xl) [col-xl-end]
+            var(--col-full) [col-full-end];
     }
 
-    main > * + * {
+    .grid-cols > *,
+    .col-md {
+        grid-column: col-md;
+    }
+
+    .col-xs {
+        grid-column: col-xs;
+    }
+
+    .col-sm {
+        grid-column: col-sm;
+    }
+
+    .col-lg {
+        grid-column: col-lg;
+    }
+
+    .col-xl {
+        grid-column: col-xl;
+    }
+
+    .col-full {
+        grid-column: col-full;
+    }
+
+    /*** Vertical margins in the Content Wrapper ***/
+
+    .content__wrapper {
+        row-gap: var(--base-size-2xl);
+    }
+
+    .content__wrapper div * + * {
         margin-top: var(--base-size-xl);
     }
 
-    main > p + p {
+    .content__wrapper div p + p {
         margin-top: var(--base-size-lg);
     }
 
-    main > p + a {
+    .content__wrapper div p + a {
+        margin-top: var(--base-size-sm);
+    }
+
+    .content__wrapper div a + a {
         margin-top: var(--base-size-sm);
     }
     
-    main > h1 + * {
+    .content__wrapper div h1 + * {
         margin-top: var(--base-size-sm);
     }
     
-    main > h2 + * {
+    .content__wrapper div h2 + * {
         margin-top: var(--base-size-xs);
     }
     
-    main > h3 + * {
+    .content__wrapper div h3 + * {
         margin-top: var(--base-size-2xs);
     }
     
-    main > :is(h4, h5, h6) + * {
+    .content__wrapper div :is(h4, h5, h6) + * {
         margin-top: var(--base-size-3xs);
+    }
+
+    /*** Vertical paddings of the Wrappers ***/
+
+    :is(.header__wrapper, .footer__wrapper) {
+        padding-block: var(--base-size-md);
+    }
+
+    .content__wrapper {
+        padding-block: calc(var(--base-size-md) * 2);
     }
 }
 
@@ -324,5 +392,22 @@
 
     .text-xl {
         font-size: var(--font-size-xl);
+    }
+
+    /*** Background Color ***/
+
+    .bg-color {
+        background-color: var(--color-scheme-subtle);
+        border-radius: var(--base-size-3xs);
+        padding: var(--base-size-md);
+    }
+}
+
+@layer overrides {
+
+    /*** Full Column doesn't like a radius =) ***/
+
+    .col-full.bg-color {
+        border-radius: unset;
     }
 }
