@@ -200,6 +200,20 @@
     .content__wrapper {
         padding-block: calc(var(--base-size-md) * 2);
     }
+
+    /*** Header ***/
+
+    .header__wrapper {
+        border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-30);
+    }
+
+    /*** Footer ***/
+
+    .footer__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--base-size-3xs);
+    }
 }
 
 @layer components {
@@ -338,6 +352,72 @@
         font-size: var(--font-size-lg);
     }
 
+    /*** Logo ***/
+
+    .logo {
+        align-items: center;
+        display: flex;
+        gap: var(--base-size-3xs);
+        text-decoration: none;
+    }
+
+    .logo__shape svg {
+        width: clamp(3.5rem, 4vw, 4rem);
+    }
+
+    .logo__shape svg .stroke {
+        stroke: var(--primary-30);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2.4;
+    }
+
+    .logo__shape svg .dot {
+        fill: var(--primary-30);
+    }
+
+    .logo__shape svg .hexagon {
+        fill: var(--primary-60);
+    }
+
+    .logo__text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo__text strong {
+        color: var(--accent-20);
+    }
+
+    .logo__text span:first-child {
+        color: var(--color-scheme-contrast);
+        font-family: var(--font-secondary);
+        font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+        font-weight: 500;
+        letter-spacing: 0.0375rem;
+        line-height: 1.25;
+    }
+
+    .logo__text span:last-child {
+        color: var(--primary-20);
+        font-family: var(--font-monospace);
+        font-size: clamp(0.75rem, 1vw, 0.875rem);
+        text-transform: uppercase;
+    }
+
+    @media only screen and (min-width: 501px) {
+
+        .logo__text span:first-child br {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        .logo__text span:last-child {
+            display: none;
+        }
+    }
 }
 
 @layer utilities {
@@ -374,24 +454,51 @@
 
     /*** Text Sizes ***/
 
-    .text-xs {
+    .text-xs,
+    .text-xs :is(a, p) {
         font-size: var(--font-size-xs);
     }
 
-    .text-sm {
+    .text-sm,
+    .text-sm :is(a, p) {
         font-size: var(--font-size-sm);
     }
 
-    .text-md {
+    .text-md,
+    .text-md :is(a, p) {
         font-size: var(--font-size);
     }
 
-    .text-lg {
+    .text-lg,
+    .text-lg :is(a, p) {
         font-size: var(--font-size-lg);
     }
 
-    .text-xl {
+    .text-xl,
+    .text-xl :is(a, p) {
         font-size: var(--font-size-xl);
+    }
+
+    /*** Text Align ***/
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-start {
+        text-align: start;
+    }
+
+    .text-end {
+        text-align: end;
     }
 
     /*** Background Color ***/

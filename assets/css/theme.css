@@ -28,7 +28,7 @@
         --font-secondary: "Bitter", "Georgia", serif;
         --font-monospace: "Roboto Mono", "Courier New", monospace;
 
-        --font-size: clamp(1.125rem, 1.25vw, 1.375rem);     /* 18px - 22px */
+        --font-size: clamp(1.125rem, 1.5vw, 1.375rem);     /* 18px - 22px */
         --font-size-xs: calc(var(--font-size) - 0.25rem);   /* 14px - 18px */
         --font-size-sm: calc(var(--font-size) - 0.125rem);  /* 16px - 20px */
         --font-size-lg: calc(var(--font-size) + 0.125rem);  /* 20px - 24px */
