@@ -76,8 +76,7 @@
         font-size: var(--base-size-xs);
     }
 
-    a, 
-    p {
+    :is(a, li, p) {
         font-size: var(--font-size);
     }
 
@@ -96,6 +95,18 @@
     a:focus {
         outline-width: 0.125rem;
         outline-color: var(--secondary-30);
+    }
+
+    ol, ul {
+        margin-left: var(--base-size-2xs);
+    }
+
+    li {
+        list-style-type: disc;
+    }
+
+    li::marker {
+        color: var(--accent-30);
     }
 }
 
@@ -163,31 +174,28 @@
         margin-top: var(--base-size-xl);
     }
 
-    .content__wrapper div p + p {
-        margin-top: var(--base-size-lg);
+    .content__wrapper div li + li {
+        margin-top: var(--base-size-3xs);
     }
 
-    .content__wrapper div p + a {
-        margin-top: var(--base-size-sm);
-    }
-
+    .content__wrapper div p + a,
     .content__wrapper div a + a {
-        margin-top: var(--base-size-sm);
+        margin-top: var(--base-size-md);
     }
     
     .content__wrapper div h1 + * {
-        margin-top: var(--base-size-sm);
+        margin-top: var(--base-size-md);
     }
     
     .content__wrapper div h2 + * {
         margin-top: var(--base-size-xs);
     }
     
-    .content__wrapper div h3 + * {
+    .content__wrapper div :is(h3, h4) + * {
         margin-top: var(--base-size-2xs);
     }
     
-    .content__wrapper div :is(h4, h5, h6) + * {
+    .content__wrapper div :is(h5, h6) + * {
         margin-top: var(--base-size-3xs);
     }
 
