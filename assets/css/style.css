@@ -116,9 +116,8 @@
 
     .grid-cols {
         --col-min-width: 480px;
-        --col-gap: clamp(1.25rem, 4vw, 2rem);
-        --col-full: minmax(var(--col-gap), 1fr);
-        --col-xs: min(var(--col-min-width), 100% - var(--col-gap) * 2);
+        --col-full: minmax(var(--gap-size), 1fr);
+        --col-xs: min(var(--col-min-width), 100% - var(--gap-size) * 2);
         --col-sm: minmax(0, 5rem);
         --col-md: minmax(0, 5rem);
         --col-lg: minmax(0, 5rem);
@@ -170,7 +169,7 @@
         row-gap: var(--base-size-2xl);
     }
 
-    .content__wrapper div * + * {
+    .content__wrapper > div > * + * {
         margin-top: var(--base-size-xl);
     }
 
@@ -425,6 +424,75 @@
         .logo__text span:last-child {
             display: none;
         }
+    }
+
+    /*** Showcase ***/
+
+    .showcase {
+        background-color: var(--color-scheme-subtle);
+        border-radius: var(--base-size-md);
+        overflow: auto;
+    }
+
+    .showcase__text {
+        padding: var(--gap-size);
+    }
+
+    .showcase__text h3 {
+        color: var(--primary-10);
+        font-size: var(--font-size-xs);
+    }
+
+    .showcase__text h4 {
+        margin-top: 0.25rem;
+    }
+
+    .showcase__text ul {
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+    }
+    
+    .showcase__text ul li {
+        color: var(--primary-30);
+        font-family: var(--font-monospace);
+        font-size: 0.875rem;
+        list-style: none;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .showcase__text ul li:not(:last-child):after {
+        content: ", ";
+    }
+
+    .showcase__image {
+        aspect-ratio: 16 / 9;
+        background-color: var(--primary-60);
+        padding-left: var(--gap-size);
+        width: 100%;
+    }
+
+    /*** Scroll Slider, Oh Snap! ***/
+
+    .scroll-snap-x {
+        overscroll-behavior-x: contain;
+        overflow-x: scroll;
+        scroll-padding-inline: var(--gap-size);
+        scroll-snap-type: x mandatory;
+    }
+
+    .slider {
+        display: flex;
+        gap: var(--base-size-md);
+        padding-inline: var(--gap-size);
+        padding-bottom: var(--gap-size);
+    }
+
+    .slider__item {
+        flex: 1 0 auto;
+        inline-size: min(480px + 5vw,100%);
+        scroll-snap-align: start;
     }
 }
 
