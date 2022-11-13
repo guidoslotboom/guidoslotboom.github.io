@@ -494,7 +494,7 @@
 
     .scroll-snap-x > * {
         flex-shrink: 0;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
         scroll-snap-stop: always;
     }
 
@@ -506,6 +506,57 @@
 
     .scroll-showcases > * {
         inline-size: min(480px,100%);
+    }
+
+    /*** Tabs ***/
+
+    .tabs {
+        border-radius: var(--proportional-size-sm);
+        display: flex;
+        flex-direction: column;
+        gap: var(--proportional-size-xs);
+    }
+
+    :is(.tab__list, .tab__panel) {
+        border-radius: var(--proportional-size-xs);
+    }
+
+    .tab__list {
+        align-self: center;
+        background-color: var(--color-scheme-subtle);
+        gap: var(--proportional-size-xs);
+        max-width: 100%; /* fix for scroll-snap & align-self */
+        padding: var(--proportional-size-xs);
+        scroll-padding: var(--proportional-size-xs);
+    }
+
+    .tab__list button {
+        background-color: transparent;
+        border: none;
+        border-radius: calc(var(--proportional-size-xs) - 0.25rem);
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        padding: var(--proportional-size-xs) var(--proportional-size-sm);
+    }
+
+    .tab__list button[aria-selected="true"] {
+        background: var(--primary-60);
+        color: var(--primary-20);
+    }
+
+    .tab__panel {
+        background-color: var(--color-scheme-subtle);
+        border-radius: var(--proportional-size-xs);
+        padding: var(--adaptive-size-lg);
+    }
+
+    .tab__panel > div {
+        min-height: 280px;
+    }
+
+    @media (max-width: 50em) {
+        /* … */
     }
 }
 
@@ -594,8 +645,13 @@
 
     .bg-color {
         background-color: var(--color-scheme-subtle);
-        border-radius: var(--responsive-size-3xs);
+        border-radius: var(--proportional-size-md);
         padding: var(--responsive-size-md);
+    }
+
+    .bg-color .bg-color {
+        background-color: var(--primary-60);
+        border-radius: var(--proportional-size-xs);
     }
 }
 
