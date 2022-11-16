@@ -93,8 +93,8 @@
     }
 
     a:focus {
-        outline-width: 0.125rem;
         outline-color: var(--secondary-30);
+        outline-width: 0.125rem;
     }
 
     ol, ul {
@@ -366,6 +366,7 @@
         display: flex;
         gap: var(--responsive-size-3xs);
         text-decoration: none;
+        width: fit-content;
     }
 
     .logo__shape svg {
@@ -434,10 +435,15 @@
         display: grid;
         grid-template-rows: 1fr max-content;
         overflow: auto;
+        transition: background 100ms ease-in;
     }
 
     .showcase:hover {
         background-color: var(--primary-60);
+    }
+
+    .showcase:active {
+        background-color: var(--primary-70);
     }
 
     .showcase__text {
@@ -511,13 +517,13 @@
     /*** Tabs ***/
 
     .tabs {
-        background-color: var(--primary-70);
+        background-color: var(--color-scheme-subtle);
         display: flex;
     }
 
     .tab__list {
         display: flex;
-        gap: var(--proportional-size-xs);
+        gap: var(--proportional-size-sm);
     }
 
     .tab__list button {
@@ -525,26 +531,38 @@
         background-color: transparent;
         border: none;
         border-radius: calc(var(--proportional-size-xs) - 0.25rem);
+        color: var(--primary-30);
         display: grid;
         font-family: var(--font-secondary);
         font-size: var(--font-size-xs);
         font-weight: 700;
         gap: var(--proportional-size-sm);
         padding: var(--proportional-size-xs) var(--proportional-size-sm);
+        transition: color 100ms ease-in, background 100ms ease-in;
+    }
+
+    .tab__list button[aria-selected="true"] {
+        background-color: var(--primary-70);
+        color: var(--primary-20);
+    }
+
+    .tab__list button:hover {
+        background-color: var(--primary-60);
+        color: var(--color-scheme-contrast);
+    }
+
+    .tab__list button:active {
+        background-color: var(--primary-70);
+        color: var(--primary-30);
     }
 
     .tab__list button figure {
         width: 96px;
     }
 
-    .tab__list button[aria-selected="true"] {
-        background-color: var(--primary-60);
-        color: var(--primary-20);
-    }
-
     .tab__panel {
         align-items: center;
-        background-color: var(--primary-60);
+        background-color: var(--primary-70);
         display: flex;
         margin-top: 0;
         padding: var(--adaptive-size-lg);
