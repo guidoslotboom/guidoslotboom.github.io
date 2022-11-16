@@ -273,7 +273,7 @@
     /*** Button Primary ***/
 
     .button-primary {
-        border-color: var(--primary-60);
+        border-color: var(--primary-50);
         color: var(--primary-30);
     }
 
@@ -291,8 +291,8 @@
     /*** Button Secondary ***/
 
     .button-secondary {
-        border-color: var(--secondary-30);
-        color: var(--secondary-10);
+        border-color: var(--secondary-20);
+        color: var(--secondary-20);
     }
 
     .button-secondary:hover {
@@ -303,14 +303,14 @@
 
     .button-secondary:active {
         --button-background: var(--secondary-30);
-        border-color: var(--secondary-20);
+        border-color: var(--secondary-30);
     }
 
     /*** Button Accent ***/
 
     .button-accent {
-        border-color: var(--accent-30);
-        color: var(--accent-10);
+        border-color: var(--accent-20);
+        color: var(--accent-20);
     }
 
     .button-accent:hover {
@@ -321,7 +321,7 @@
 
     .button-accent:active {
         --button-background: var(--accent-30);
-        border-color: var(--accent-20);
+        border-color: var(--accent-30);
     }
 
     /*** Button Specific Styles ***/
