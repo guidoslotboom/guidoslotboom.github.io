@@ -5,37 +5,37 @@
     @font-face {
         font-display: swap;
         font-family: "Bitter";
-        src: url("../fonts/bitter-variable-font-wght.woff2") format("woff2-variations");
-        font-weight: 100 900;
         font-stretch: 100% 100%;
         font-style: normal;
+        font-weight: 100 900;
+        src: url("../fonts/bitter-variable-font-wght.woff2") format("woff2-variations");
     }
 
     @font-face {
         font-display: swap;
         font-family: "Bitter";
-        src: url("../fonts/bitter-italic-variable-font-wght.woff2") format("woff2-variations");
-        font-weight: 100 900;
         font-stretch: 100% 100%;
         font-style: italic;
+        font-weight: 100 900;
+        src: url("../fonts/bitter-italic-variable-font-wght.woff2") format("woff2-variations");
     }
 
     @font-face {
         font-display: swap;
         font-family: "Kumbh Sans";
-        src: url("../fonts/kumbh-sans-variable-font-wght.woff2") format("woff2-variations");
-        font-weight: 100 900;
         font-stretch: 100% 100%;
         font-style: normal;
+        font-weight: 100 900;
+        src: url("../fonts/kumbh-sans-variable-font-wght.woff2") format("woff2-variations");
     }
 
     @font-face {
         font-display: swap;
         font-family: "Roboto Mono";
-        src: url("../fonts/roboto-mono-variable-font_wght.woff2") format("woff2-variations");
-        font-weight: 100 900;
         font-stretch: 100% 100%;
         font-style: normal;
+        font-weight: 100 900;
+        src: url("../fonts/roboto-mono-variable-font_wght.woff2") format("woff2-variations");
     }
 
     body {
@@ -248,17 +248,17 @@
     }
 
     :is(.button-primary, .button-secondary, .button-accent):has(span):before {
-        content: " ";
         background-color: var(--button-background);
-        width: calc(100% - 0.25rem);
-        height: calc(100% - 0.25rem);
         border-radius: 3rem;
+        content: " ";
+        height: calc(100% - 0.25rem);
+        left: 0;
         margin: 0.125rem;
         position: absolute;
         top: 0;
-        left: 0;
         transform: scale(0.75);
         transition: all 150ms ease-in;
+        width: calc(100% - 0.25rem);
     }
 
     :is(.button-primary, .button-secondary, .button-accent):has(span):hover:before {
@@ -331,6 +331,12 @@
         border-color: transparent;
         color: var(--color-scheme-contrast);
         text-decoration: none;
+    }
+
+    .button-stealth:has(span):before {
+        height: 100%;
+        margin: 0;
+        width: 100%;
     }
 
     .button-stealth:active {
