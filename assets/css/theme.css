@@ -43,36 +43,36 @@
 
         /*** Responsive Sizes ***/
 
-        --responsive-val: 0.25rem;
-        --responsive-size-4xs: clamp(0.5rem, calc(var(--responsive-val) + 0.5vw), 0.75rem);    /* 8px - 12px */
-        --responsive-size-3xs: clamp(0.75rem, calc(var(--responsive-val) + 0.75vw), 1rem);     /* 12px - 16px */
-        --responsive-size-2xs: clamp(1rem, calc(var(--responsive-val) + 1vw), 1.25rem);        /* 16px - 20px */
-        --responsive-size-xs: clamp(1.125rem, calc(var(--responsive-val) + 1.25vw), 1.5rem);   /* 18px - 24px */
-        --responsive-size-sm: clamp(1.25rem, calc(var(--responsive-val) + 1.5vw), 1.75rem);    /* 20px - 28px */
-        --responsive-size-md: clamp(1.5rem, calc(var(--responsive-val) + 1.75vw), 2rem);       /* 24px - 32px */
-        --responsive-size-lg: clamp(1.75rem, calc(var(--responsive-val) + 2vw), 2.25rem);      /* 28px - 36px */
-        --responsive-size-xl: clamp(2rem, calc(var(--responsive-val) + 2.5vw), 2.75rem);       /* 32px - 44px */
-        --responsive-size-2xl: clamp(2.25rem, calc(var(--responsive-val) + 3.25vw), 3.5rem);   /* 36px - 56px */
-        --responsive-size-3xl: clamp(2.5rem, calc(var(--responsive-val) + 4.25vw), 4.5rem);    /* 40px - 72px */
-        --responsive-size-4xl: clamp(3rem, calc(var(--responsive-val) + 5.75vw), 6rem);        /* 48px - 96px */
+        --respon-val: 0.25rem;
+        --respon-size-4xs: clamp(0.5rem, calc(var(--respon-val) + 0.5vw), 0.75rem);    /* 8px - 12px */
+        --respon-size-3xs: clamp(0.75rem, calc(var(--respon-val) + 0.75vw), 1rem);     /* 12px - 16px */
+        --respon-size-2xs: clamp(1rem, calc(var(--respon-val) + 1vw), 1.25rem);        /* 16px - 20px */
+        --respon-size-xs: clamp(1.125rem, calc(var(--respon-val) + 1.25vw), 1.5rem);   /* 18px - 24px */
+        --respon-size-sm: clamp(1.25rem, calc(var(--respon-val) + 1.5vw), 1.75rem);    /* 20px - 28px */
+        --respon-size-md: clamp(1.5rem, calc(var(--respon-val) + 1.75vw), 2rem);       /* 24px - 32px */
+        --respon-size-lg: clamp(1.75rem, calc(var(--respon-val) + 2vw), 2.25rem);      /* 28px - 36px */
+        --respon-size-xl: clamp(2rem, calc(var(--respon-val) + 2.5vw), 2.75rem);       /* 32px - 44px */
+        --respon-size-2xl: clamp(2.25rem, calc(var(--respon-val) + 3.25vw), 3.5rem);   /* 36px - 56px */
+        --respon-size-3xl: clamp(2.5rem, calc(var(--respon-val) + 4.25vw), 4.5rem);    /* 40px - 72px */
+        --respon-size-4xl: clamp(3rem, calc(var(--respon-val) + 5.75vw), 6rem);        /* 48px - 96px */
 
         /*** Proportional & Adaptive Sizes ***/
 
-        --base-size-min: 1.25rem;
-        --base-size-val: 2vw;
-        --base-size-max: 2rem;
-        --base-size: clamp(var(--base-size-min), var(--base-size-val), var(--base-size-max));
+        --size-min: 1.25rem;
+        --size-val: 2vw;
+        --size-max: 2rem;
+        --size: clamp(var(--size-min), var(--size-val), var(--size-max));
 
-        --proportional-size-xs: calc(var(--base-size) * 0.5);   /* 10px - 16px */
-        --proportional-size-sm: calc(var(--base-size) * 0.75);  /* 15px - 24px */
-        --proportional-size-md: var(--base-size);               /* 20px - 32px */
-        --proportional-size-lg: calc(var(--base-size) * 1.5);   /* 30px - 48px */
-        --proportional-size-xl: calc(var(--base-size) * 2);     /* 40px - 64px */
+        --equal-size-xs: calc(var(--size) * 0.5);   /* 10px - 16px */
+        --equal-size-sm: calc(var(--size) * 0.75);  /* 15px - 24px */
+        --equal-size-md: var(--size);               /* 20px - 32px */
+        --equal-size-lg: calc(var(--size) * 1.5);   /* 30px - 48px */
+        --equal-size-xl: calc(var(--size) * 2);     /* 40px - 64px */
 
-        --adaptive-size-xs: clamp(var(--base-size-min), calc(var(--base-size-val) * 0.75), calc(var(--base-size-max) * 0.75));  /* 20px - 24px */
-        --adaptive-size-sm: clamp(var(--base-size-min), var(--base-size-val), var(--base-size-max));                            /* 20px - 32px */
-        --adaptive-size-md: clamp(var(--base-size-min), calc(var(--base-size-val) * 1.5), calc(var(--base-size-max) * 1.5));    /* 20px - 48px */
-        --adaptive-size-lg: clamp(var(--base-size-min), calc(var(--base-size-val) * 2), calc(var(--base-size-max) * 2));        /* 20px - 64px */
-        --adaptive-size-xl: clamp(var(--base-size-min), calc(var(--base-size-val) * 3), calc(var(--base-size-max) * 3));        /* 20px - 96px */
+        --adapt-size-xs: clamp(var(--size-min), calc(var(--size-val) * 0.75), calc(var(--size-max) * 0.75));  /* 20px - 24px */
+        --adapt-size-sm: clamp(var(--size-min), var(--size-val), var(--size-max));                            /* 20px - 32px */
+        --adapt-size-md: clamp(var(--size-min), calc(var(--size-val) * 1.5), calc(var(--size-max) * 1.5));    /* 20px - 48px */
+        --adapt-size-lg: clamp(var(--size-min), calc(var(--size-val) * 2), calc(var(--size-max) * 2));        /* 20px - 64px */
+        --adapt-size-xl: clamp(var(--size-min), calc(var(--size-val) * 3), calc(var(--size-max) * 3));        /* 20px - 96px */
     }
 }

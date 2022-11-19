@@ -53,27 +53,27 @@
     }
 
     h1 {
-        font-size: var(--responsive-size-2xl);
+        font-size: var(--respon-size-2xl);
     }
 
     h2 {
-        font-size: var(--responsive-size-xl);
+        font-size: var(--respon-size-xl);
     }
 
     h3 {
-        font-size: var(--responsive-size-lg);
+        font-size: var(--respon-size-lg);
     }
 
     h4 {
-        font-size: var(--responsive-size-md);
+        font-size: var(--respon-size-md);
     }
 
     h5 {
-        font-size: var(--responsive-size-sm);
+        font-size: var(--respon-size-sm);
     }
 
     h6 {
-        font-size: var(--responsive-size-xs);
+        font-size: var(--respon-size-xs);
     }
 
     :is(a, li, p) {
@@ -98,7 +98,7 @@
     }
 
     ol, ul {
-        margin-left: var(--responsive-size-2xs);
+        margin-left: var(--respon-size-2xs);
     }
 
     li {
@@ -116,8 +116,8 @@
 
     .grid-cols {
         --col-min-width: 480px;
-        --col-full: minmax(var(--proportional-size-md), 1fr);
-        --col-xs: min(var(--col-min-width), 100% - var(--proportional-size-xl));
+        --col-full: minmax(var(--equal-size-md), 1fr);
+        --col-xs: min(var(--col-min-width), 100% - var(--equal-size-xl));
         --col-sm: minmax(0, 5rem);
         --col-md: minmax(0, 5rem);
         --col-lg: minmax(0, 5rem);
@@ -166,41 +166,41 @@
     /*** Vertical margins in the Content Wrapper ***/
 
     .content__wrapper {
-        row-gap: var(--responsive-size-2xl);
+        row-gap: var(--respon-size-2xl);
     }
 
     .content__wrapper > div > * + *,
     .content__wrapper :is(ol, ul) {
-        margin-top: var(--responsive-size-xl);
+        margin-top: var(--respon-size-xl);
     }
 
     .content__wrapper h1 + *,
     .content__wrapper p + a,
     .content__wrapper a + a {
-        margin-top: var(--responsive-size-md);
+        margin-top: var(--respon-size-md);
     }
     
     .content__wrapper h2 + * {
-        margin-top: var(--responsive-size-xs);
+        margin-top: var(--respon-size-xs);
     }
     
     .content__wrapper :is(h3, h4) + * {
-        margin-top: var(--responsive-size-2xs);
+        margin-top: var(--respon-size-2xs);
     }
     
     .content__wrapper :is(h5, h6) + *,
     .content__wrapper li + li {
-        margin-top: var(--responsive-size-3xs);
+        margin-top: var(--respon-size-3xs);
     }
 
     /*** Vertical paddings of the Wrappers ***/
 
     :is(.header__wrapper, .footer__wrapper) {
-        padding-block: var(--responsive-size-md);
+        padding-block: var(--respon-size-md);
     }
 
     .content__wrapper {
-        padding-block: calc(var(--responsive-size-md) * 2);
+        padding-block: calc(var(--respon-size-md) * 2);
     }
 
     /*** Header ***/
@@ -214,7 +214,7 @@
     .footer__wrapper {
         display: flex;
         flex-direction: column;
-        gap: var(--responsive-size-3xs);
+        gap: var(--respon-size-3xs);
     }
 }
 
@@ -234,7 +234,7 @@
     }
 
     :is(.button-primary, .button-secondary, .button-accent) {
-        padding: var(--responsive-size-3xs) var(--responsive-size-md);
+        padding: var(--respon-size-3xs) var(--respon-size-md);
     }
 
     :is(.button-primary, .button-secondary, .button-accent) span {
@@ -340,17 +340,17 @@
     /*** Button Sizes ***/
 
     .button-sm {
-        padding: var(--responsive-size-4xs) var(--responsive-size-2xs);
+        padding: var(--respon-size-4xs) var(--respon-size-2xs);
         font-size: var(--font-size-sm);
     }
 
     .button-md {
-        padding: var(--responsive-size-3xs) var(--responsive-size-md);
+        padding: var(--respon-size-3xs) var(--respon-size-md);
         font-size: var(--font-size);
     }
 
     .button-lg {
-        padding: var(--responsive-size-2xs) var(--responsive-size-xl);
+        padding: var(--respon-size-2xs) var(--respon-size-xl);
         font-size: var(--font-size-lg);
     }
 
@@ -359,7 +359,7 @@
     .logo {
         align-items: center;
         display: flex;
-        gap: var(--responsive-size-3xs);
+        gap: var(--respon-size-3xs);
         text-decoration: none;
         width: fit-content;
     }
@@ -426,7 +426,7 @@
 
     .showcase {
         background-color: var(--color-scheme-subtle);
-        border-radius: var(--adaptive-size-sm);
+        border-radius: var(--adapt-size-sm);
         display: grid;
         grid-template-rows: 1fr max-content;
         overflow: auto;
@@ -442,7 +442,7 @@
     }
 
     .showcase__text {
-        padding: var(--adaptive-size-md);
+        padding: var(--adapt-size-md);
     }
 
     .showcase__text h3 {
@@ -464,7 +464,7 @@
     .showcase__text ul li {
         color: var(--primary-30);
         font-family: var(--font-monospace);
-        font-size: var(--responsive-size-3xs);
+        font-size: var(--respon-size-3xs);
         list-style: none;
         margin: 0;
         text-transform: uppercase;
@@ -475,7 +475,7 @@
     }
 
     .showcase__image {
-        padding-left: var(--adaptive-size-md);
+        padding-left: var(--adapt-size-md);
     }
 
     .showcase__image img {
@@ -500,9 +500,9 @@
     }
 
     .scroll-showcases {
-        gap: var(--adaptive-size-sm);
-        padding: var(--adaptive-size-sm);
-        scroll-padding: var(--adaptive-size-sm);
+        gap: var(--adapt-size-sm);
+        padding: var(--adapt-size-sm);
+        scroll-padding: var(--adapt-size-sm);
     }
 
     .scroll-showcases > * {
@@ -518,21 +518,21 @@
 
     .tab__list {
         display: flex;
-        gap: var(--proportional-size-sm);
+        gap: var(--equal-size-sm);
     }
 
     .tab__list button {
         align-items: center;
         background-color: transparent;
         border: none;
-        border-radius: calc(var(--proportional-size-xs) - 0.25rem);
+        border-radius: calc(var(--equal-size-xs) - 0.25rem);
         color: var(--primary-30);
         display: grid;
         font-family: var(--font-secondary);
         font-size: var(--font-size-xs);
         font-weight: 700;
-        gap: var(--proportional-size-sm);
-        padding: var(--proportional-size-xs) var(--proportional-size-sm);
+        gap: var(--equal-size-sm);
+        padding: var(--equal-size-xs) var(--equal-size-sm);
         transition: color 100ms ease-in, background 100ms ease-in;
     }
 
@@ -560,26 +560,26 @@
         background-color: var(--primary-70);
         display: flex;
         margin-top: 0;
-        padding: var(--adaptive-size-lg);
+        padding: var(--adapt-size-lg);
     }
 
     @media only screen and (min-width: 961px) {
         
         .tabs {
-            border-radius: var(--proportional-size-sm);
+            border-radius: var(--equal-size-sm);
             flex-direction: row;
-            gap: var(--proportional-size-xs);
+            gap: var(--equal-size-xs);
             grid-column: col-xl;
-            padding: var(--proportional-size-xs);
+            padding: var(--equal-size-xs);
         }
 
         :is(.tab__list, .tab__panel) {
-            border-radius: var(--proportional-size-xs);
+            border-radius: var(--equal-size-xs);
         }
 
         .tab__list {
             flex-direction: column;
-            padding: var(--proportional-size-xs);
+            padding: var(--equal-size-xs);
         }
 
         .tab__list button {
@@ -599,7 +599,7 @@
             flex-direction: row;
             max-width: 100%; /* fix for scroll-snap & align-self */
             overflow-x: auto;
-            padding: var(--proportional-size-xs);
+            padding: var(--equal-size-xs);
         }
 
         .tab__list button span {
@@ -616,20 +616,20 @@
     .dock {
         background-color: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: var(--responsive-size-2xs);
+        border-radius: var(--respon-size-2xs);
         display: inline-flex;
-        gap: var(--responsive-size-4xs);
+        gap: var(--respon-size-4xs);
         margin-left: 0;
         padding: 0.5rem;
     }
 
     .dock__item {
-        height: var(--proportional-size-lg);
+        height: var(--equal-size-lg);
         list-style: none;
         margin: 0;
         position: relative;
         transition: all 100ms ease-in;
-        width: var(--proportional-size-lg);
+        width: var(--equal-size-lg);
     }
 
     .dock__item figure {
@@ -638,7 +638,7 @@
     }
 
     .dock__item img {
-        border-radius: var(--responsive-size-4xs);
+        border-radius: var(--respon-size-4xs);
         transition: all 100ms ease-in;
         z-index: 1;
     }
@@ -753,13 +753,13 @@
 
     .bg-color {
         background-color: var(--color-scheme-subtle);
-        border-radius: var(--proportional-size-md);
-        padding: var(--responsive-size-md);
+        border-radius: var(--equal-size-md);
+        padding: var(--respon-size-md);
     }
 
     .bg-color .bg-color {
         background-color: var(--primary-60);
-        border-radius: var(--proportional-size-xs);
+        border-radius: var(--equal-size-xs);
     }
 }
 
