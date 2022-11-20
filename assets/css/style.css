@@ -672,6 +672,45 @@
         opacity: 1;
         transform: translateY(-160%);
     }
+
+    /*** Blob ***/
+
+    .blob {
+        overflow-x: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .blob__element {
+        height: 100%;
+        position: absolute;
+        right: -24%;
+        top: -24%;
+        width: 100%;
+    }
+    
+    .blob:has(.blob__element--small) {
+        filter: blur(calc(44px + 4vw));
+        height: max(32vw, 200px);
+        width: max(32vw, 200px);
+    }
+
+    .blob:has(.blob__element--large) {
+        filter: blur(calc(16px + 8vw));
+        height: max(48vw, 320px);
+        width: max(48vw, 320px);
+    }
+    
+    .blob__element--small {
+        background-color: var(--accent-30);
+        border-radius: 72% 28% 32% 64% / 60% 36% 64% 40%;
+    }
+    
+    .blob__element--large {
+        background-color: var(--primary-70);
+        border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
+    }
 }
 
 @layer utilities {
@@ -775,5 +814,11 @@
 
     .col-full.bg-color {
         border-radius: unset;
+    }
+
+    /*** Position page elements above the blobs ***/
+
+    :is(.page__header, .page__content, .page__footer) {
+        position: relative;
     }
 }
