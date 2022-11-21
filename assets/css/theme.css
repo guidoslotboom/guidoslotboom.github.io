@@ -44,6 +44,7 @@
         /*** Responsive Sizes ***/
 
         --respon-val: 0.25rem;
+        --respon-size-5xs: clamp(0.25rem, calc(var(--respon-val) + 0.25vw), 0.5rem);   /* 8px - 12px */
         --respon-size-4xs: clamp(0.5rem, calc(var(--respon-val) + 0.5vw), 0.75rem);    /* 8px - 12px */
         --respon-size-3xs: clamp(0.75rem, calc(var(--respon-val) + 0.75vw), 1rem);     /* 12px - 16px */
         --respon-size-2xs: clamp(1rem, calc(var(--respon-val) + 1vw), 1.25rem);        /* 16px - 20px */
@@ -55,6 +56,7 @@
         --respon-size-2xl: clamp(2.25rem, calc(var(--respon-val) + 3.25vw), 3.5rem);   /* 36px - 56px */
         --respon-size-3xl: clamp(2.5rem, calc(var(--respon-val) + 4.25vw), 4.5rem);    /* 40px - 72px */
         --respon-size-4xl: clamp(3rem, calc(var(--respon-val) + 5.75vw), 6rem);        /* 48px - 96px */
+        --respon-size-5xl: clamp(3.75rem, calc(var(--respon-val) + 7.75vw), 8rem);     /* 60px - 128px */
 
         /*** Proportional & Adaptive Sizes ***/
 
