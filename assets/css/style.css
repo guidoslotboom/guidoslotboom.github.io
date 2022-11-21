@@ -209,6 +209,12 @@
         border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-30);
     }
 
+    .header__wrapper > div {
+        align-items: center;
+        display: flex;
+        justify-content: space-between
+    }
+
     /*** Footer ***/
 
     .footer__wrapper {
@@ -220,34 +226,31 @@
 
 @layer components {
 
-    [class*="button"] {
-        background-color: transparent;
-        border-radius: 3rem;
+    .button {
         color: var(--primary-30);
         transition: all 150ms ease-in;
-        position: relative;
     }
 
     .button:hover,
-    [class*="button"]:not(:has(span)):hover {
+    .button:not(:has(span)):hover {
         color: var(--primary-10);
     }
 
-    :is(.button-primary, .button-secondary, .button-accent) {
-        padding: var(--respon-size-3xs) var(--respon-size-md);
-    }
-
-    :is(.button-primary, .button-secondary, .button-accent) span {
+    .button span {
         position: relative;
     }
 
-    :is(.button-primary, .button-secondary, .button-accent):has(span) {
-        border-width: 0.125rem;
+    .button:has(span) {
+        background-color: transparent;
+        border-radius: 3rem;
         border-style: solid;
+        border-width: 0.125rem;
+        padding: var(--respon-size-3xs) var(--respon-size-xs);
+        position: relative;
         text-decoration: none;
     }
 
-    :is(.button-primary, .button-secondary, .button-accent):has(span):before {
+    .button:has(span):before {
         background-color: var(--button-background);
         border-radius: 3rem;
         content: " ";
@@ -261,103 +264,97 @@
         width: calc(100% - 0.25rem);
     }
 
-    :is(.button-primary, .button-secondary, .button-accent):has(span):hover:before {
+    .button:has(span):hover:before {
         transform: scale(1);
     }
 
     /*** Button Primary ***/
 
-    .button-primary {
+    .button.color-primary {
         border-color: var(--primary-50);
         color: var(--primary-30);
     }
 
-    .button-primary:hover {
+    .button.color-primary:has(span):hover {
         --button-background: var(--primary-50);
         border-color: var(--primary-50);
         color: var(--color-scheme-contrast);
     }
 
-    .button-primary:active {
+    .button.color-primary:has(span):active {
         --button-background: var(--primary-60);
         border-color: var(--primary-50);
     }
 
     /*** Button Secondary ***/
 
-    .button-secondary {
+    .button.color-secondary {
         border-color: var(--secondary-20);
         color: var(--secondary-20);
     }
 
-    .button-secondary:hover {
+    .button.color-secondary:has(span):hover {
         --button-background: var(--secondary-20);
         border-color: var(--secondary-20);
         color: var(--color-scheme-base);
     }
 
-    .button-secondary:active {
+    .button.color-secondary:has(span):active {
         --button-background: var(--secondary-30);
         border-color: var(--secondary-30);
     }
 
     /*** Button Accent ***/
 
-    .button-accent {
+    .button.color-accent {
         border-color: var(--accent-20);
         color: var(--accent-20);
     }
 
-    .button-accent:hover {
+    .button.color-accent:has(span):hover {
         --button-background: var(--accent-20);
         border-color: var(--accent-20);
         color: var(--color-scheme-base);
     }
 
-    .button-accent:active {
+    .button.color-accent:has(span):active {
         --button-background: var(--accent-30);
         border-color: var(--accent-30);
     }
 
-    /*** Button Specific Styles ***/
-
-    .button-stealth {
-        border-color: transparent;
-        text-decoration: underline;
-    }
-
-    .button-stealth:hover {
-        --button-background: var(--primary-50);
-        border-color: transparent;
-        color: var(--color-scheme-contrast);
-        text-decoration: none;
-    }
-
-    .button-stealth:has(span):before {
-        height: 100%;
-        margin: 0;
-        width: 100%;
-    }
-
-    .button-stealth:active {
-        --button-background: var(--primary-60);
-    }
-
     /*** Button Sizes ***/
 
-    .button-sm {
+    .button.size-sm {
         padding: var(--respon-size-4xs) var(--respon-size-2xs);
         font-size: var(--font-size-sm);
     }
 
-    .button-md {
-        padding: var(--respon-size-3xs) var(--respon-size-md);
+    .button.size-md {
+        padding: var(--respon-size-3xs) var(--respon-size-xs);
         font-size: var(--font-size);
     }
 
-    .button-lg {
-        padding: var(--respon-size-2xs) var(--respon-size-xl);
+    .button.size-lg {
+        padding: var(--respon-size-2xs) var(--respon-size-sm);
         font-size: var(--font-size-lg);
+    }
+
+    /*** Button Specific Styles ***/
+
+    .button.style-stealth {
+        border-color: transparent;
+        text-decoration: underline;
+    }
+
+    .button.style-stealth:has(span):hover {
+        border-color: transparent;
+        text-decoration: none;
+    }
+
+    .button.style-stealth:has(span):before {
+        height: 100%;
+        margin: 0;
+        width: 100%;
     }
 
     /*** Logo ***/
@@ -507,7 +504,8 @@
 
     .scroll-showcases {
         gap: var(--adapt-size-sm);
-        padding: var(--adapt-size-sm);
+        padding-inline: var(--adapt-size-sm);
+        padding-block-end: var(--adapt-size-sm);
         scroll-padding: var(--adapt-size-sm);
     }
 
