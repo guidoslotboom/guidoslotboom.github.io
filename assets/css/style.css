@@ -81,7 +81,7 @@
     }
 
     a:link {
-        color: var(--secondary-20);
+        color: var(--secondary-10);
         display: inline-block;
         font-weight: 450;
         transition: color 100ms ease-in;
@@ -93,7 +93,7 @@
     }
 
     a:focus {
-        outline-color: var(--secondary-30);
+        outline-color: var(--secondary-20);
         outline-width: 0.125rem;
     }
 
@@ -106,7 +106,7 @@
     }
 
     li::marker {
-        color: var(--accent-30);
+        color: var(--accent-20);
     }
 }
 
@@ -206,7 +206,7 @@
     /*** Header ***/
 
     .header__wrapper {
-        border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-30);
+        border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-20);
     }
 
     .header__wrapper > div {
@@ -289,37 +289,37 @@
     /*** Button Secondary ***/
 
     .button.color-secondary {
-        border-color: var(--secondary-20);
-        color: var(--secondary-20);
+        border-color: var(--secondary-10);
+        color: var(--secondary-10);
     }
 
     .button.color-secondary:has(span):hover {
-        --button-background: var(--secondary-20);
-        border-color: var(--secondary-20);
+        --button-background: var(--secondary-10);
+        border-color: var(--secondary-10);
         color: var(--color-scheme-base);
     }
 
     .button.color-secondary:has(span):active {
-        --button-background: var(--secondary-30);
-        border-color: var(--secondary-30);
+        --button-background: var(--secondary-20);
+        border-color: var(--secondary-20);
     }
 
     /*** Button Accent ***/
 
     .button.color-accent {
-        border-color: var(--accent-20);
-        color: var(--accent-20);
+        border-color: var(--accent-10);
+        color: var(--accent-10);
     }
 
     .button.color-accent:has(span):hover {
-        --button-background: var(--accent-20);
-        border-color: var(--accent-20);
+        --button-background: var(--accent-10);
+        border-color: var(--accent-10);
         color: var(--color-scheme-base);
     }
 
     .button.color-accent:has(span):active {
-        --button-background: var(--accent-30);
-        border-color: var(--accent-30);
+        --button-background: var(--accent-20);
+        border-color: var(--accent-20);
     }
 
     /*** Button Sizes ***/
@@ -392,7 +392,7 @@
     }
 
     .logo__text strong {
-        color: var(--accent-20);
+        color: var(--accent-10);
     }
 
     .logo__text span:first-child {
@@ -674,46 +674,58 @@
     /*** Blob ***/
 
     .blob {
-        overflow-x: hidden;
+        overflow-x: clip;
         position: absolute;
         right: 0;
         top: 0;
     }
     
     .blob__element {
+        animation: blob-morph 9s ease-in-out infinite both;
+        border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
         height: 100%;
         position: absolute;
-        right: -24%;
-        top: -24%;
         width: 100%;
     }
     
     .blob:has(.blob__element--small) {
-        filter: blur(calc(44px + 4vw));
-        height: max(32vw, 200px);
-        width: max(32vw, 200px);
+        filter: blur(calc(24px + 4vw));
+        height: max(32vw, 168px);
+        width: max(32vw, 168px);
     }
 
     .blob:has(.blob__element--large) {
-        filter: blur(calc(16px + 8vw));
-        height: max(48vw, 320px);
-        width: max(48vw, 320px);
+        filter: blur(calc(12px + 6vw));
+        height: max(64vw, 336px);
+        width: max(64vw, 336px);
     }
     
     .blob__element--small {
+        animation-direction: alternate;
         background-color: var(--accent-30);
-        border-radius: 72% 28% 32% 64% / 60% 36% 64% 40%;
+        right: -20%;
+        top: -28%;
     }
     
     .blob__element--large {
+        animation-direction: alternate-reverse;
         background-color: var(--primary-70);
-        border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
+        right: -32%;
+        top: -44%;
+    }
+    
+    @keyframes blob-morph {
+        0%{
+            border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
+        } to {
+            border-radius: 72% 48%;
+        }
     }
 
     /*** Splashscreen ***/
 
     .page__content :has(.wrapper__splash) {
-        border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-30);
+        border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-20);
         height: 100vh;
     }
 
@@ -732,7 +744,7 @@
     }
 
     .wrapper__splash h1 span {
-        color: var(--accent-20);
+        color: var(--accent-10);
     }
 
     .wrapper__splash h2 {
