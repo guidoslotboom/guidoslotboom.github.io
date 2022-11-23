@@ -237,6 +237,7 @@
     }
 
     .button span {
+        padding-inline: var(--respon-size-3xs);
         position: relative;
     }
 
@@ -245,7 +246,7 @@
         border-radius: 3rem;
         border-style: solid;
         border-width: 0.125rem;
-        padding: var(--respon-size-3xs) var(--respon-size-xs);
+        padding: var(--respon-size-3xs);
         position: relative;
         text-decoration: none;
     }
@@ -283,7 +284,7 @@
 
     .button.color-primary:has(span):active {
         --button-background: var(--primary-60);
-        border-color: var(--primary-50);
+        border-color: var(--primary-60);
     }
 
     /*** Button Secondary ***/
@@ -325,17 +326,17 @@
     /*** Button Sizes ***/
 
     .button.size-sm {
-        padding: var(--respon-size-4xs) var(--respon-size-2xs);
+        padding: var(--respon-size-4xs);
         font-size: var(--font-size-sm);
     }
 
     .button.size-md {
-        padding: var(--respon-size-3xs) var(--respon-size-xs);
+        padding: var(--respon-size-3xs);
         font-size: var(--font-size);
     }
 
     .button.size-lg {
-        padding: var(--respon-size-2xs) var(--respon-size-sm);
+        padding: var(--respon-size-2xs);
         font-size: var(--font-size-lg);
     }
 
@@ -343,7 +344,6 @@
 
     .button.style-stealth {
         border-color: transparent;
-        text-decoration: underline;
     }
 
     .button.style-stealth:has(span):hover {
@@ -681,7 +681,7 @@
     }
     
     .blob__element {
-        animation: blob-morph 9s ease-in-out infinite both;
+        animation: blob-morph 7s ease-in-out infinite both;
         border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
         height: 100%;
         position: absolute;
@@ -690,14 +690,14 @@
     
     .blob:has(.blob__element--small) {
         filter: blur(calc(24px + 4vw));
-        height: max(32vw, 168px);
-        width: max(32vw, 168px);
+        height: max(28vw, 168px);
+        width: max(28vw, 168px);
     }
 
     .blob:has(.blob__element--large) {
         filter: blur(calc(12px + 6vw));
-        height: max(64vw, 336px);
-        width: max(64vw, 336px);
+        height: max(56vw, 336px);
+        width: max(56vw, 336px);
     }
     
     .blob__element--small {
@@ -717,8 +717,10 @@
     @keyframes blob-morph {
         0%{
             border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
+            filter: brightness(0.9);
         } to {
             border-radius: 72% 48%;
+            filter: brightness(1);
         }
     }
 
