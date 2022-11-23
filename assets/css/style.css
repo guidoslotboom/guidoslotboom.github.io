@@ -674,7 +674,7 @@
     /*** Blob ***/
 
     .blob {
-        overflow-x: clip;
+        overflow-x: hidden;
         position: absolute;
         right: 0;
         top: 0;
