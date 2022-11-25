@@ -383,7 +383,7 @@
         width: fit-content;
     }
 
-    .logo :is(.stroke, .dot, .hexagon, .logo__text span)  {
+    .logo :is(.stroke, .dot, .hexagon, .logo__text span, strong)  {
         transition: all 100ms ease-in;
     }
 
@@ -441,6 +441,10 @@
 
     .logo:hover .hexagon {
         fill: var(--primary-60);
+    }
+
+    .logo:hover strong {
+        color: var(--secondary-10);
     }
 
     .logo:hover .logo__text span:first-child {
@@ -791,7 +795,7 @@
     }
 
     .wrapper__splash h1 span {
-        color: var(--secondary-20);
+        color: var(--secondary-10);
     }
 
     .wrapper__splash h2 {
