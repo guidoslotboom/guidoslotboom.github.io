@@ -665,6 +665,50 @@
         }
     }
 
+    /*** Tab SVGs ***/
+
+    .tab__list button .stroke {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+    }
+
+    .tab__list button .stroke-dasharray {
+        stroke-dasharray: 4 4;
+    }
+
+    .tab__list button .fill-dark {
+        fill: var(--primary-50);
+    }
+
+    .tab__list button .stroke-dark {
+        stroke: var(--primary-50);
+    }
+
+    .tab__list button .fill-light {
+        fill: var(--primary-40);
+    }
+
+    .tab__list button .stroke-light {
+        stroke: var(--primary-40);
+    }
+
+    .tab__list button[aria-selected="true"] .fill-dark {
+        fill: var(--primary-40);
+    }
+
+    .tab__list button[aria-selected="true"] .stroke-dark {
+        stroke: var(--primary-40);
+    }
+
+    .tab__list button[aria-selected="true"] .fill-light {
+        fill: var(--primary-10);
+    }
+
+    .tab__list button[aria-selected="true"] .stroke-light {
+        stroke: var(--primary-10);
+    }
+
     /*** Dock ***/
 
     .dock {
