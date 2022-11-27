@@ -113,7 +113,7 @@
     }
 
     li::marker {
-        color: var(--secondary-20);
+        color: var(--primary-40);
     }
 
     ol, ul {
@@ -487,11 +487,11 @@
     }
 
     .showcase:hover {
-        background-color: var(--primary-60);
+        background-color: var(--primary-70);
     }
 
     .showcase:active {
-        background-color: var(--primary-70);
+        background-color: var(--primary-60);
     }
 
     .showcase__text {
@@ -580,7 +580,7 @@
         background-color: transparent;
         border: none;
         border-radius: calc(var(--equal-size-xs) - 0.25rem);
-        color: var(--primary-40);
+        color: var(--primary-30);
         display: grid;
         font-family: var(--font-secondary);
         font-size: var(--font-size-xs);
@@ -592,11 +592,11 @@
 
     .tab__list button[aria-selected="true"] {
         background-color: var(--theme-forground);
-        color: var(--primary-20);
+        color: var(--primary-10);
     }
 
     .tab__list button:hover {
-        background-color: var(--primary-60);
+        background-color: var(--primary-70);
         color: var(--theme-contrast);
     }
 
@@ -686,27 +686,31 @@
     }
 
     .tab__list button .fill-light {
-        fill: var(--primary-40);
+        fill: var(--primary-30);
     }
 
     .tab__list button .stroke-light {
-        stroke: var(--primary-40);
+        stroke: var(--primary-30);
     }
 
-    .tab__list button[aria-selected="true"] .fill-dark {
+    .tab__list button[aria-selected="true"] .fill-dark,
+    .tab__list button:hover .fill-dark {
         fill: var(--primary-40);
     }
 
-    .tab__list button[aria-selected="true"] .stroke-dark {
+    .tab__list button[aria-selected="true"] .stroke-dark,
+    .tab__list button:hover .stroke-dark {
         stroke: var(--primary-40);
     }
 
-    .tab__list button[aria-selected="true"] .fill-light {
-        fill: var(--primary-10);
+    .tab__list button[aria-selected="true"] .fill-light,
+    .tab__list button:hover .fill-light {
+        fill: var(--theme-contrast);
     }
 
-    .tab__list button[aria-selected="true"] .stroke-light {
-        stroke: var(--primary-10);
+    .tab__list button[aria-selected="true"] .stroke-light,
+    .tab__list button:hover .stroke-light {
+        stroke: var(--theme-contrast);
     }
 
     /*** Dock ***/
