@@ -183,6 +183,42 @@
         grid-column: col-full;
     }
 
+    /*** Inner Grid and Template Columns ***/
+
+    .content__wrapper .inner-grid-cols {
+        display: grid;
+        gap: var(--adapt-size-sm);
+        grid-template-columns: repeat(var(--column-repeat), minmax(min(var(--column-min), 100%), 1fr));
+    }
+
+    .inner-grid-cols.cols-fill {
+        --column-repeat: auto-fill;
+    }
+
+    .inner-grid-cols.cols-fit {
+        --column-repeat: auto-fit;
+    }
+
+    .inner-grid-cols.cols-xl {
+        --column-min: 28rem;
+    }
+
+    .inner-grid-cols.cols-lg {
+        --column-min: 24rem;
+    }
+
+    .inner-grid-cols.cols-md {
+        --column-min: 20rem;
+    }
+
+    .inner-grid-cols.cols-sm {
+        --column-min: 16rem;
+    }
+
+    .inner-grid-cols.cols-xs {
+        --column-min: 12rem;
+    }
+
     /*** Vertical margins in the Content Wrapper ***/
 
     .content__wrapper {
@@ -198,6 +234,10 @@
     .content__wrapper p + a,
     .content__wrapper a + a {
         margin-top: var(--respon-size-md);
+    }
+
+    .content__wrapper > div > div + div {
+        margin-top: 0;
     }
     
     .content__wrapper h2 + * {
