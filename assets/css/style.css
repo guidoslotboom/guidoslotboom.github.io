@@ -941,6 +941,22 @@
         font-size: var(--font-size-sm);
         margin-top: var(--respon-size-3xs);
     }
+
+    /*** Multi Columns ***/
+
+    .multi-columns {
+        column-width: 280px;
+        column-gap: var(--respon-size-xl);
+    }
+
+    .multi-columns {
+        column-width: 280px;
+        column-gap: var(--respon-size-xl);
+    }
+
+    .multi-columns li + li {
+        margin-top: var(--respon-size-xs);
+    }
 }
 
 @layer utilities {
