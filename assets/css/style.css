@@ -733,24 +733,20 @@
         stroke: var(--primary-30);
     }
 
-    .tab__list button[aria-selected="true"] .fill-dark,
-    .tab__list button:hover .fill-dark {
+    .tab__list button:is([aria-selected="true"], :hover) .fill-dark {
         fill: var(--primary-40);
     }
 
-    .tab__list button[aria-selected="true"] .stroke-dark,
-    .tab__list button:hover .stroke-dark {
+    .tab__list button:is([aria-selected="true"], :hover) .stroke-dark {
         stroke: var(--primary-40);
     }
 
-    .tab__list button[aria-selected="true"] .fill-light,
-    .tab__list button:hover .fill-light {
-        fill: var(--theme-contrast);
+    .tab__list button:is([aria-selected="true"], :hover) .fill-light {
+        fill: var(--primary-10);
     }
 
-    .tab__list button[aria-selected="true"] .stroke-light,
-    .tab__list button:hover .stroke-light {
-        stroke: var(--theme-contrast);
+    .tab__list button:is([aria-selected="true"], :hover) .stroke-light {
+        stroke: var(--primary-10);
     }
 
     .tab__list button :is(.fill, .stroke) {
@@ -791,9 +787,9 @@
     }
 
     .dock__item figcaption {
-        background-color: var(--primary-10);
+        background-color: var(--theme-contrast);
         border-radius: 0.25rem;
-        color: var(--primary-70);
+        color: var(--theme-base);
         font-size: 1rem;
         margin: 0;
         opacity: 0;
@@ -863,6 +859,16 @@
 
         .blob__element--large {
             background-color: var(--primary-60);
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        .blob__element--small {
+            background-color: var(--primary-70);
+        }
+
+        .blob__element--large {
+            background-color: var(--theme-subtle);
         }
     }
     
