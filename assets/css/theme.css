@@ -8,6 +8,9 @@
         --saturation-primary: 50%;
         --saturation: 100%;
 
+        --white: 0, 0%, 100%;
+        --black: 0, 0%, 0%;
+
         /*** Font Families ***/
 
         --font-primary: "Kumbh Sans", "Arial", sans-serif;
@@ -16,7 +19,7 @@
 
         /*** Font Sizes ***/
 
-        --font-size: clamp(1.125rem, 1.5vw, 1.375rem);     /* 18px - 22px */
+        --font-size: clamp(1.125rem, 1.5vw, 1.375rem);      /* 18px - 22px */
         --font-size-xs: calc(var(--font-size) - 0.25rem);   /* 14px - 18px */
         --font-size-sm: calc(var(--font-size) - 0.125rem);  /* 16px - 20px */
         --font-size-lg: calc(var(--font-size) + 0.125rem);  /* 20px - 24px */

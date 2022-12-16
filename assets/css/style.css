@@ -957,48 +957,96 @@
 
     .socials {
         display: flex;
-        gap: var(--respon-size-4xs);
+        gap: var(--respon-size-3xs);
     }
 
     .social {
         align-items: center;
         background-color: transparent;
-        border-radius: var(--respon-size-xs);
+        border-radius: calc(var(--respon-size-2xl) / 2);
         display: flex;
-        height: var(--equal-size-lg);
+        height: var(--respon-size-2xl);
         justify-content: center;
         position: relative;
-        width: var(--equal-size-lg);
+        width: var(--respon-size-2xl);
     }
 
+    .social:before,
     .social:after {
-        background-color: var(--primary-50);
-        border-radius: var(--respon-size-xs);
+        border-radius: calc(var(--respon-size-2xl) / 2);
         content: " ";
         height: 100%;
-        opacity: 0;
         position: absolute;
-        transform: scale(0);
-        transition: all 100ms ease-in;
         width: 100%;
     }
 
-    .social:hover:after {
+    .social:before {
+        background-color: var(--theme-subtle); 
+        opacity: 0;
+        transform: scale(0.75);
+        transition: all 200ms ease-in-out;
+    }
+
+    .social:after {
+        background-color: var(--primary-70);
+        transform: scale(1);
+        transition: all 400ms ease-in-out;
+    }
+
+    .social:hover:before {
         opacity: 1;
         transform: scale(1);
     }
 
+    .social:hover:after {
+        background-color: hsl(var(--white));
+        transform: scale(0.85);
+    }
+
     .social:active:after {
+        transform: scale(0.9);
+    }
+
+    .social:active:before {
         background-color: var(--primary-60);
     }
 
     .social svg {
-        height: 1.5rem;
         display: inline-block;
-        fill: var(--theme-contrast);
+        fill: var(--primary-10);
+        height: var(--respon-size-xs);
         position: absolute;
-        width: 1.5rem;
+        transition: fill 100ms ease-in-out;
+        width: var(--respon-size-xs);
         z-index: 1;
+    }
+
+    .social:hover svg {
+        fill: hsl(var(--black));
+    }
+
+    .social.codepen:before {
+        background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    }
+
+    .social.dribbble:before {
+        background-color: #ea4c89;
+    }
+
+    .social.github:before {
+        background-color: #6e40c9;
+    }
+
+    .social.instagram:before {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285aeB 90%);
+    }
+
+    .social.linkedin:before {
+        background-color: #0a66c2;
+    }
+
+    .social.twitter:before {
+        background-color: #1d9bf0;
     }
 }
 
