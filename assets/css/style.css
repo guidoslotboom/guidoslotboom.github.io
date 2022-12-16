@@ -85,7 +85,7 @@
         color: var(--primary-30);
         display: inline-block;
         font-weight: 450;
-        transition: color 100ms ease-in;
+        transition: color var(--duration-2) var(--timing-function);
     }
 
     a:hover {
@@ -283,7 +283,6 @@
 
     .button {
         color: var(--primary-30);
-        transition: all 150ms ease-in;
     }
 
     .button:hover,
@@ -316,12 +315,16 @@
         position: absolute;
         top: 0;
         transform: scale(0.75);
-        transition: all 150ms ease-in;
         width: calc(100% - 0.25rem);
     }
 
     .button:has(span):is(:hover, :active):before {
         transform: scale(1);
+    }
+
+    .button,
+    .button:has(span):before {
+        transition: all var(--duration-2) var(--timing-function);
     }
 
     /*** Button Primary ***/
@@ -425,7 +428,7 @@
     }
 
     .logo :is(.stroke, .dot, .hexagon, .logo__text span, strong)  {
-        transition: all 100ms ease-in;
+        transition: all var(--duration-2) var(--timing-function);
     }
 
     .logo__shape svg {
@@ -518,7 +521,7 @@
         display: grid;
         grid-template-rows: 1fr max-content;
         overflow: auto;
-        transition: background 100ms ease-in;
+        transition: background-color var(--duration-3) var(--timing-function);
     }
 
     .showcase:hover {
@@ -622,7 +625,9 @@
         font-weight: 700;
         gap: var(--equal-size-sm);
         padding: var(--equal-size-xs) var(--equal-size-sm);
-        transition: color 100ms ease-in, background 100ms ease-in;
+        transition-property: color, background-color;
+        transition-duration: var(--duration-4);
+        transition-timing-function: var(--timing-function);
     }
 
     .tab__list button[aria-selected="true"] {
@@ -748,6 +753,12 @@
         stroke: var(--theme-contrast);
     }
 
+    .tab__list button :is(.fill, .stroke) {
+        transition-property: fill, stroke;
+        transition-duration: var(--duration-3);
+        transition-timing-function: var(--timing-function);
+    }
+
     /*** Dock ***/
 
     .dock {
@@ -765,7 +776,6 @@
         list-style: none;
         margin: 0;
         position: relative;
-        transition: all 100ms ease-in;
         width: calc(var(--respon-size-sm) * 2);
     }
 
@@ -776,7 +786,6 @@
 
     .dock__item img {
         border-radius: var(--respon-size-4xs);
-        transition: all 100ms ease-in;
         width: 100%;
         z-index: 1;
     }
@@ -788,10 +797,9 @@
         font-size: 1rem;
         margin: 0;
         opacity: 0;
-        padding: 0.125rem 0.375rem;
+        padding: 0.25rem 0.5rem;
         position: absolute;
-        transform: translateY(-50%);
-        transition: all 100ms ease-in;
+        transition-delay: var(--duration-1);
     }
 
     .dock__item img:hover {
@@ -801,6 +809,10 @@
     .dock__item img:hover + figcaption {
         opacity: 1;
         transform: translateY(-150%);
+    }
+
+    .dock__item :is(img, figcaption) {
+        transition: all var(--duration-2) var(--timing-function);
     }
 
     /*** Blob ***/
@@ -813,7 +825,7 @@
     }
     
     .blob__element {
-        animation: blob-morph 7s ease-in-out infinite both;
+        animation: blob-morph 7s infinite both;
         border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
         height: 100%;
         position: absolute;
@@ -984,13 +996,13 @@
         background-color: var(--theme-subtle); 
         opacity: 0;
         transform: scale(0.75);
-        transition: all 200ms ease-in-out;
+        transition-duration: var(--duration-3);
     }
 
     .social:after {
         background-color: var(--primary-70);
         transform: scale(1);
-        transition: all 400ms ease-in-out;
+        transition-duration: var(--duration-4);
     }
 
     .social:hover:before {
@@ -1016,7 +1028,6 @@
         fill: var(--primary-10);
         height: var(--respon-size-xs);
         position: absolute;
-        transition: fill 100ms ease-in-out;
         width: var(--respon-size-xs);
         z-index: 1;
     }
@@ -1047,6 +1058,12 @@
 
     .social.twitter:before {
         background-color: #1d9bf0;
+    }
+
+    .social:is(:before, :after),
+    .social svg {
+        transition-property: all;
+        transition-timing-function: var(--timing-function);
     }
 }
 

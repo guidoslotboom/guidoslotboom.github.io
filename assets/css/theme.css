@@ -60,6 +60,14 @@
         --adapt-size-md: clamp(var(--size-min), calc(var(--size-val) * 1.5), calc(var(--size-max) * 1.5));    /* 20px - 48px */
         --adapt-size-lg: clamp(var(--size-min), calc(var(--size-val) * 2), calc(var(--size-max) * 2));        /* 20px - 64px */
         --adapt-size-xl: clamp(var(--size-min), calc(var(--size-val) * 3), calc(var(--size-max) * 3));        /* 20px - 96px */
+
+        /*** Transitions Values ***/
+        --duration-1: 100ms;
+        --duration-2: 150ms;
+        --duration-3: 200ms;
+        --duration-4: 300ms;
+        --duration-5: 400ms;
+        --timing-function: ease-in-out;
     }
 
     @media (prefers-color-scheme: dark) {
