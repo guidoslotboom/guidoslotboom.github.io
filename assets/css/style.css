@@ -261,10 +261,6 @@
 
     /*** Header ***/
 
-    /* .header__wrapper {
-        border-top: clamp(0.25rem, 1vw, 0.375rem) solid var(--accent-20);
-    } */
-
     .header__wrapper > div {
         align-items: center;
         display: flex;
@@ -849,13 +845,13 @@
     
     .blob:has(.blob__element--small) {
         filter: blur(calc(24px + 4vw));
-        height: max(24vw, 168px);
-        width: max(28vw, 192px);
+        height: max(24vw, 160px);
+        width: max(28vw, 200px);
     }
 
     .blob:has(.blob__element--large) {
         filter: blur(calc(12px + 6vw));
-        height: max(52vw, 336px);
+        height: max(52vw, 320px);
         width: max(56vw, 360px);
     }
     
@@ -887,17 +883,15 @@
         }
 
         .blob__element--large {
-            background-color: var(--theme-subtle);
+            background-color: var(--theme-forground);
         }
     }
     
     @keyframes blob-morph {
         0%{
             border-radius: 64% 56% 48% 72% / 64% 44% 76% 60%;
-            filter: brightness(0.9);
         } to {
             border-radius: 72% 48%;
-            filter: brightness(1);
         }
     }
 
