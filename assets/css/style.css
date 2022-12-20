@@ -417,7 +417,6 @@
     /*** Buttons Wrapper ***/
 
     .buttons,
-    /* p:has(.button + .button), */
     :is(div, p):has(> .button + .button) {
         align-items: center;
         display: flex;
