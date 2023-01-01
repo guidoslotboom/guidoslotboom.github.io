@@ -273,27 +273,23 @@
 
 @layer components {
 
-    :is(button, .button) {
-        font-size: var(--font-size);
-    }
+    /*** Button ***/
 
-    .button span {
-        padding-inline: var(--respon-size-3xs);
-        position: relative;
+    button,
+    .button:has(span) {
+        border-radius: 3rem;
+        border-style: solid;
+        border-width: 0.125rem;
+        text-decoration: none;
     }
 
     button:not(:has(span)) {
         padding: var(--respon-size-3xs) var(--respon-size-md);
     }
 
-    :is(button, .button):has(span),
-    button:not(:has(span)) {
-        background-color: transparent;
-        border-radius: 3rem;
-        border-style: solid;
-        border-width: 0.125rem;
-        text-decoration: none;
-    }
+    :is(button, .button) {
+        font-size: var(--font-size);
+    } 
 
     :is(button, .button):has(span) {
         background-color: transparent;
@@ -303,8 +299,7 @@
         position: relative;
     }
 
-    :is(button, .button):has(span):before {
-        background-color: var(--button-background);
+    :is(button, .button):has(span:only-child):before {
         border-radius: 3rem;
         content: " ";
         height: calc(100% - 0.25rem);
@@ -316,12 +311,18 @@
         width: calc(100% - 0.25rem);
     }
 
-    :is(button, .button):has(span):is(:hover, :active):before {
+    :is(button, .button):has(span:only-child) span {
+        padding-inline: var(--respon-size-3xs);
+        position: relative;
+    }
+
+    :is(button, .button):has(span:only-child):is(:hover, :active):before {
+        background-color: var(--button-background);
         transform: scale(1);
     }
 
     :is(button, .button),
-    :is(button, .button):has(span):before {
+    :is(button, .button):has(span:only-child):before {
         transition: all var(--duration-2) var(--timing-function);
     }
 
@@ -345,18 +346,18 @@
         color: var(--theme-base);
     }
 
-    .button:has(span) {
+    :is(button, .button):has(span) {
         border-color: var(--primary-50);
         color: var(--primary-30);
     }
 
-    .button:has(span):hover {
+    :is(button, .button):has(span):hover {
         --button-background: var(--primary-50);
         border-color: var(--primary-50);
         color: var(--theme-contrast);
     }
 
-    .button:has(span):active {
+    :is(button, .button):has(span):active {
         --button-background: var(--primary-40);
         border-color: var(--primary-40);
         color: var(--theme-contrast);
@@ -650,11 +651,8 @@
 
     .tab__list button {
         align-items: center;
-        background-color: transparent;
-        border: 2px solid;
         border-color: transparent;
         border-radius: calc(var(--equal-size-xs) - 0.25rem);
-        color: var(--primary-30);
         display: grid;
         font-family: var(--font-secondary);
         font-size: var(--font-size-xs);
