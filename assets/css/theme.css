@@ -103,7 +103,7 @@
 
             /*** Accent Color ***/
 
-            --accent-10: hsl(var(--hue-accent), var(--saturation), 64%);
+            --accent-10: hsl(var(--hue-accent), var(--saturation), 76%);
             --accent-20: hsl(var(--hue-accent), var(--saturation), 48%);
             --accent-30: hsl(var(--hue-accent), var(--saturation), 36%);
         }
@@ -121,7 +121,7 @@
             --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 98%);
             --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 96%);
             --theme-forground: hsl(var(--hue-primary), var(--saturation-primary), 93%);
-            --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 12%);
+            --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 16%);
 
             /*** Primary Color ***/
 
