@@ -751,44 +751,46 @@
         stroke-dasharray: 4 4;
     }
 
-    .tab__list button .fill-dark {
+    .tab__list button .fill-base {
         fill: var(--primary-50);
     }
 
-    .tab__list button .stroke-dark {
+    .tab__list button .stroke-base {
         stroke: var(--primary-50);
     }
 
-    .tab__list button .fill-light {
+    .tab__list button .fill-contrast {
         fill: var(--primary-30);
     }
 
-    .tab__list button .stroke-light {
+    .tab__list button .stroke-contrast {
         stroke: var(--primary-30);
+    }    
+
+    .tab__list button[aria-selected="true"]:hover .fill-contrast {
+        fill: var(--theme-contrast);
+    }
+    
+    .tab__list button[aria-selected="true"]:hover .stroke-contrast {
+        stroke: var(--theme-contrast);
     }
 
-    .tab__list button[aria-selected="true"] .fill-dark {
-        fill: var(--primary-40);
-    }
-
-    .tab__list button[aria-selected="true"] .stroke-dark {
-        stroke: var(--primary-40);
-    }
-
-    .tab__list button[aria-selected="true"] .fill-light {
+    .tab__list :is(button, button[aria-selected="true"]):hover .fill-contrast,
+    .tab__list button[aria-selected="true"] .fill-contrast {
         fill: var(--primary-10);
     }
 
-    .tab__list button[aria-selected="true"] .stroke-light {
+    .tab__list :is(button, button[aria-selected="true"]):hover .stroke-contrast,
+    .tab__list button[aria-selected="true"] .stroke-contrast {
         stroke: var(--primary-10);
     }
 
-    .tab__list button:hover .fill-light {
-        fill: var(--theme-contrast);
+    .tab__list button[aria-selected="true"] .fill-base {
+        fill: var(--primary-40);
     }
 
-    .tab__list button:hover .stroke-light {
-        stroke: var(--theme-contrast);
+    .tab__list button[aria-selected="true"] .stroke-base {
+        stroke: var(--primary-40);
     }
 
     .tab__list button :is(.fill, .stroke) {
@@ -801,7 +803,7 @@
 
     .dock {
         background-color: var(--primary-60);
-        border: 1px solid hsla(0, 0%, var(--lightness), 0.05);
+        border: 1px solid hsla(0, 0%, var(--contrastness), 0.05);
         border-radius: var(--respon-size-2xs);
         display: inline-flex;
         gap: var(--respon-size-4xs);
