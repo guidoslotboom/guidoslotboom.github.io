@@ -551,7 +551,7 @@
     /*** Showcase ***/
 
     .showcase {
-        background-color: var(--theme-forground);
+        background-color: var(--theme-foreground);
         border-radius: var(--adapt-size-sm);
         display: grid;
         grid-template-rows: 1fr max-content;
@@ -667,7 +667,7 @@
     }
 
     .tab__list button[aria-selected="true"] {
-        background-color: var(--theme-forground);
+        background-color: var(--theme-foreground);
         color: var(--primary-10);
     }
 
@@ -677,7 +677,7 @@
     }
 
     .tab__list button:active {
-        background-color: var(--theme-forground);
+        background-color: var(--theme-foreground);
         color: var(--primary-30);
     }
 
@@ -687,7 +687,7 @@
 
     .tab__panel {
         align-items: center;
-        background-color: var(--theme-forground);
+        background-color: var(--theme-foreground);
         display: flex;
         margin-top: 0;
         padding: var(--adapt-size-lg);
@@ -1130,7 +1130,7 @@
     /*** Background Color ***/
 
     .bg-color {
-        background-color: var(--theme-forground);
+        background-color: var(--theme-foreground);
         border-radius: var(--equal-size-md);
         padding: var(--respon-size-md);
     }

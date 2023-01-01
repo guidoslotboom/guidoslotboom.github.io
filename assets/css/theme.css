@@ -83,7 +83,7 @@
 
             --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 8%);
             --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 12%);
-            --theme-forground: hsl(var(--hue-primary), var(--saturation-primary), 16%);
+            --theme-foreground: hsl(var(--hue-primary), var(--saturation-primary), 16%);
             --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 96%);
 
             /*** Primary Color ***/
@@ -120,7 +120,7 @@
 
             --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 98%);
             --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 96%);
-            --theme-forground: hsl(var(--hue-primary), var(--saturation-primary), 93%);
+            --theme-foreground: hsl(var(--hue-primary), var(--saturation-primary), 93%);
             --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 16%);
 
             /*** Primary Color ***/
