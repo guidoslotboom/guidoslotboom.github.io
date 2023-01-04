@@ -1,28 +1,63 @@
 // Selects DOM elements by class or id and stores them in variables
-const slider = document.querySelector('.scroll-showcases');
-const prevButton = document.querySelector('#prev');
-const nextButton = document.querySelector('#next');
+const slider = document.querySelector('#showcases');
+const items = slider.querySelectorAll('.item');
+const navigation = document.querySelector('.scroll-snap-nav');
+const prevButton = navigation.querySelector('#scrollToPrev');
+const nextButton = navigation.querySelector('#scrollToNext');
 
-// Variable to store the total width of all the images in the slider
-let totalWidth = 0;
-const items = document.querySelectorAll('.showcase');
+// Variable to store the total width of all the items in the slider
+let totalItemsWidth = 0;
 
 // Iterates over each of the items and adds up their widths
-// Storing the result in the totalWidth variable
+// Storing the result in the totalItemsWidth variable
 items.forEach((item) => {
-  totalWidth += item.offsetWidth;
+  totalItemsWidth += item.offsetWidth;
 });
 
+// Count the number of items
+const numberOfItems = items.length;
+
 // Sets it equal to the visible width and scroll amount
-const visibleWidth = slider.offsetWidth;
-const scrollAmount = totalWidth / items.length;
+const itemWidth = totalItemsWidth / numberOfItems;
 
 // Adds click event listeners when prev button is clicked
 prevButton.addEventListener('click', () => {
-  slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  // Get the current scroll position in the slider
+  const currentScrollPosition = slider.scrollLeft;
+
+  if (currentScrollPosition > 0) {
+    // Scroll to the previous item
+    slider.scrollBy({
+      left: -itemWidth,
+      behavior: 'smooth'
+    });
+  } else {
+    // Jump to the last item
+    slider.scrollTo({
+      left: numberOfItems * itemWidth
+    });
+  }
 });
 
 // Adds click event listeners when next button is clicked
 nextButton.addEventListener('click', () => {
-  slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  // Get the current scroll position in the slider
+  const currentScrollPosition = slider.scrollLeft;
+  // Get the viewport width of the slider
+  const sliderWidth = slider.offsetWidth;
+  // Get the overflow width of the slider
+  const overflowWidth = slider.scrollWidth;
+  
+  if (currentScrollPosition < overflowWidth - sliderWidth) {
+    // Scroll to the next item
+    slider.scrollBy({ 
+      left: itemWidth,
+      behavior: 'smooth'
+    });
+  } else {
+    // Jump to the first item
+    slider.scrollTo({
+      left: 0
+    });
+  }
 });
