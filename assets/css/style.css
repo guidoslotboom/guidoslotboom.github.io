@@ -701,7 +701,6 @@
     }
 
     .tab__list button[aria-selected="true"] {
-        /* background-color: var(--theme-foreground); */
         color: var(--primary-10);
     }
 
