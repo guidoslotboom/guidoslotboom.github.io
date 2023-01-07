@@ -269,8 +269,12 @@
 
     /*** Vertical paddings of the Wrappers ***/
 
-    :is(.header__wrapper, .footer__wrapper) {
-        padding-block: var(--respon-size-md);
+    .header__wrapper {
+        padding: var(--respon-size-md);
+    }
+
+    .footer__wrapper {
+        padding: var(--respon-size-2xl) var(--respon-size-md);
     }
 
     .content__wrapper {
