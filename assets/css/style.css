@@ -701,7 +701,7 @@
     }
 
     .tab__list button[aria-selected="true"] {
-        background-color: var(--theme-foreground);
+        /* background-color: var(--theme-foreground); */
         color: var(--primary-10);
     }
 
@@ -712,8 +712,11 @@
     }
 
     .tab__list button:active {
-        background-color: var(--theme-foreground);
         color: var(--primary-30);
+    }
+
+    .tab__list button:is([aria-selected="true"], :active) {
+        background-color: var(--theme-foreground);
     }
 
     .tab__list button figure {
@@ -863,12 +866,13 @@
 
     .dock__item img {
         border-radius: var(--respon-size-4xs);
+        transition: all var(--duration-2) var(--timing-function);
         width: 100%;
         z-index: 1;
     }
 
     .dock__item figcaption {
-        background-color: var(--theme-contrast);
+        background-color: var(--primary-10);
         border-radius: 0.25rem;
         color: var(--theme-base);
         font-size: 1rem;
@@ -876,7 +880,8 @@
         opacity: 0;
         padding: 0.25rem 0.5rem;
         position: absolute;
-        transition-delay: var(--duration-1);
+        transform: translateY(-75%);
+        transition: all var(--duration-1) var(--timing-function);
     }
 
     .dock__item img:hover {
@@ -886,10 +891,6 @@
     .dock__item img:hover + figcaption {
         opacity: 1;
         transform: translateY(-150%);
-    }
-
-    .dock__item :is(img, figcaption) {
-        transition: all var(--duration-2) var(--timing-function);
     }
 
     /*** Splashscreen ***/
