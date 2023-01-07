@@ -341,10 +341,6 @@
         position: relative;
     }
 
-    /* :is(button, .button) span.material-symbols-outlined {
-        
-    } */
-
     /*** Button Color Default ***/
 
     button {
@@ -457,30 +453,23 @@
     /*** Icon Button Sizes ***/
 
     .button.icon-sm {
+        --icon-size: var(--icon-font-size-sm);
         padding: var(--respon-size-4xs);
-    }
-
-    .button.icon-sm span {
-        font-size: var(--icon-font-size-sm);
-        max-width: var(--icon-font-size-sm); /* Page load fix */
     }
 
     .button.icon-md {
+        --icon-size: var(--icon-font-size-md);
         padding: var(--respon-size-4xs);
-    }
-
-    .button.icon-md span {
-        font-size: var(--icon-font-size-md);
-        max-width: var(--icon-font-size-md); /* Page load fix */
     }
 
     .button.icon-lg {
+        --icon-size: var(--icon-font-size-lg);
         padding: var(--respon-size-4xs);
     }
 
-    .button.icon-lg span {
-        font-size: var(--icon-font-size-lg);
-        max-width: var(--icon-font-size-lg); /* Page load fix */
+    .button:is(.icon-sm, .icon-md, .icon-lg) span.material-symbols-outlined {
+        font-size: var(--icon-size);
+        max-width: var(--icon-size); /* Fix for width during page load */
     }
 
     /*** Buttons Wrapper ***/
