@@ -21,11 +21,14 @@
 
         /*** Font Sizes ***/
 
-        --font-size: clamp(1.125rem, 1.5vw, 1.375rem);      /* 18px - 22px */
-        --font-size-xs: calc(var(--font-size) - 0.25rem);   /* 14px - 18px */
-        --font-size-sm: calc(var(--font-size) - 0.125rem);  /* 16px - 20px */
-        --font-size-lg: calc(var(--font-size) + 0.125rem);  /* 20px - 24px */
-        --font-size-xl: calc(var(--font-size) + 0.25rem);   /* 22px - 26px */
+        --font-size: clamp(1.125rem, 1.5vw, 1.375rem);          /* 18px - 22px */
+        --font-size-xs: calc(var(--font-size) - 0.25rem);       /* 14px - 18px */
+        --font-size-sm: calc(var(--font-size) - 0.125rem);      /* 16px - 20px */
+        --font-size-lg: calc(var(--font-size) + 0.125rem);      /* 20px - 24px */
+        --font-size-xl: calc(var(--font-size) + 0.25rem);       /* 22px - 26px */
+        --icon-font-size-sm: calc(var(--font-size) + 0.125rem); /* 20px - 24px */
+        --icon-font-size-md: calc(var(--font-size) + 0.625rem); /* 28px - 32px */
+        --icon-font-size-lg: calc(var(--font-size) + 1.125rem); /* 32px - 36px */
 
         /*** Responsive Sizes ***/
 

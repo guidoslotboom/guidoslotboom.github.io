@@ -38,6 +38,13 @@
         src: url("../fonts/roboto-mono-variable-font_wght.woff2") format("woff2-variations");
     }
 
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 400;
+        src: url("../fonts/material-symbols-outlined.woff2") format('woff2');
+    }
+
     body {
         background-color: var(--theme-base);
         color: var(--theme-contrast);
@@ -122,6 +129,22 @@
     ::selection {
         background-color: var(--theme-contrast);
         color: var(--theme-base);
+    }
+
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
     }
 }
 
@@ -311,8 +334,16 @@
     }
 
     :is(button, .button) span:only-child {
+        align-items: center;
+        display: flex;
+        gap: var(--respon-size-3xs);
+        justify-content: center;
         position: relative;
     }
+
+    /* :is(button, .button) span.material-symbols-outlined {
+        
+    } */
 
     /*** Button Color Default ***/
 
@@ -392,21 +423,7 @@
         color: var(--theme-base);
     }
 
-    /*** Button Sizes ***/
-
-    .button.text-sm {
-        padding: var(--respon-size-4xs) var(--respon-size-sm);
-    }
-
-    .button.text-md {
-        padding: var(--respon-size-3xs) var(--respon-size-md);
-    }
-
-    .button.text-lg {
-        padding: var(--respon-size-2xs) var(--respon-size-lg);
-    }
-
-    /*** Button Specific Styles ***/
+    /*** Button Color Stealth Style ***/
 
     .button.style-stealth {
         border-color: transparent;
@@ -423,6 +440,49 @@
         width: 100%;
     }
 
+    /*** Text Button Sizes ***/
+
+    .button.text-sm {
+        padding: var(--respon-size-4xs) var(--respon-size-sm);
+    }
+
+    .button.text-md {
+        padding: var(--respon-size-3xs) var(--respon-size-md);
+    }
+
+    .button.text-lg {
+        padding: var(--respon-size-2xs) var(--respon-size-lg);
+    }
+
+    /*** Icon Button Sizes ***/
+
+    .button.icon-sm {
+        padding: var(--respon-size-4xs);
+    }
+
+    .button.icon-sm span {
+        font-size: var(--icon-font-size-sm);
+        max-width: var(--icon-font-size-sm); /* Page load fix */
+    }
+
+    .button.icon-md {
+        padding: var(--respon-size-4xs);
+    }
+
+    .button.icon-md span {
+        font-size: var(--icon-font-size-md);
+        max-width: var(--icon-font-size-md); /* Page load fix */
+    }
+
+    .button.icon-lg {
+        padding: var(--respon-size-4xs);
+    }
+
+    .button.icon-lg span {
+        font-size: var(--icon-font-size-lg);
+        max-width: var(--icon-font-size-lg); /* Page load fix */
+    }
+
     /*** Buttons Wrapper ***/
 
     .buttons,
@@ -435,8 +495,7 @@
 
     @media only screen and (max-width: 440px) {
 
-        :is(button, .button) {
-            text-align: center;
+        .button:is(.text-sm, .text-md, .text-lg) {
             width: 100%;
         }
     }
