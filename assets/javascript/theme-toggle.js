@@ -59,3 +59,18 @@ window.onload = () => {
     updateThemeColor();
   });
 }
+
+// Change after browser setting or system preferences adjustment
+darkModeMediaQuery.addEventListener('change',     
+  ({matches:isDarkMode}) => {
+
+    // Check of the value matches the color scheme
+    if (themeColorValue = isDarkMode) {
+      themeColorValue = 'dark';
+    } else {
+      themeColorValue = 'light';
+    }
+
+    // Update the prefers theme color
+    updateThemeColor();
+})
