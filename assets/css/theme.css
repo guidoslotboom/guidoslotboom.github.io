@@ -75,77 +75,73 @@
         --timing-function: ease-in-out;
     }
 
-    @media (prefers-color-scheme: dark) {
-        :root {
+    :root[data-theme="dark"] {
 
-            /*** Color HSL Values ***/
+        /*** Color HSL Values ***/
 
-            --lightness: 100%;
+        --lightness: 100%;
 
-            /*** Color Scheme ***/
+        /*** Color Scheme ***/
 
-            --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 8%);
-            --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 12%);
-            --theme-foreground: hsl(var(--hue-primary), var(--saturation-primary), 16%);
-            --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 96%);
+        --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 8%);
+        --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 12%);
+        --theme-foreground: hsl(var(--hue-primary), var(--saturation-primary), 16%);
+        --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 96%);
 
-            /*** Primary Color ***/
+        /*** Primary Color ***/
 
-            --primary-10: hsl(var(--hue-primary), var(--saturation-primary), 88%);
-            --primary-20: hsl(var(--hue-primary), var(--saturation-primary), 84%);
-            --primary-30: hsl(var(--hue-primary), var(--saturation-primary), 76%);
-            --primary-40: hsl(var(--hue-primary), var(--saturation-primary), 48%);
-            --primary-50: hsl(var(--hue-primary), var(--saturation-primary), 36%);
-            --primary-60: hsl(var(--hue-primary), var(--saturation-primary), 24%);
+        --primary-10: hsl(var(--hue-primary), var(--saturation-primary), 88%);
+        --primary-20: hsl(var(--hue-primary), var(--saturation-primary), 84%);
+        --primary-30: hsl(var(--hue-primary), var(--saturation-primary), 76%);
+        --primary-40: hsl(var(--hue-primary), var(--saturation-primary), 48%);
+        --primary-50: hsl(var(--hue-primary), var(--saturation-primary), 36%);
+        --primary-60: hsl(var(--hue-primary), var(--saturation-primary), 24%);
 
-            /*** Secondary Color ***/
+        /*** Secondary Color ***/
 
-            --secondary-10: hsl(var(--hue-secondary), var(--saturation), 64%);
-            --secondary-20: hsl(var(--hue-secondary), var(--saturation), 56%);
-            --secondary-30: hsl(var(--hue-secondary), var(--saturation), 48%);
+        --secondary-10: hsl(var(--hue-secondary), var(--saturation), 64%);
+        --secondary-20: hsl(var(--hue-secondary), var(--saturation), 56%);
+        --secondary-30: hsl(var(--hue-secondary), var(--saturation), 48%);
 
-            /*** Accent Color ***/
+        /*** Accent Color ***/
 
-            --accent-10: hsl(var(--hue-accent), var(--saturation), 76%);
-            --accent-20: hsl(var(--hue-accent), var(--saturation), 48%);
-            --accent-30: hsl(var(--hue-accent), var(--saturation), 36%);
-        }
+        --accent-10: hsl(var(--hue-accent), var(--saturation), 76%);
+        --accent-20: hsl(var(--hue-accent), var(--saturation), 48%);
+        --accent-30: hsl(var(--hue-accent), var(--saturation), 36%);
     }
 
-    @media (prefers-color-scheme: light) {
-        :root {
+    :root[data-theme="light"] {
 
-            /*** Color HSL Values ***/
+        /*** Color HSL Values ***/
 
-            --lightness: 0%;
+        --lightness: 0%;
 
-            /*** Color Scheme ***/
+        /*** Color Scheme ***/
 
-            --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 98%);
-            --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 96%);
-            --theme-foreground: hsl(var(--hue-primary), var(--saturation-primary), 93%);
-            --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 16%);
+        --theme-base: hsl(var(--hue-primary), var(--saturation-primary), 98%);
+        --theme-subtle: hsl(var(--hue-primary), var(--saturation-primary), 96%);
+        --theme-foreground: hsl(var(--hue-primary), var(--saturation-primary), 93%);
+        --theme-contrast: hsl(var(--hue-primary), var(--saturation-primary), 16%);
 
-            /*** Primary Color ***/
+        /*** Primary Color ***/
 
-            --primary-10: hsl(var(--hue-primary), var(--saturation-primary), 32%);
-            --primary-20: hsl(var(--hue-primary), var(--saturation-primary), 40%);
-            --primary-30: hsl(var(--hue-primary), var(--saturation-primary), 56%);
-            --primary-40: hsl(var(--hue-primary), var(--saturation-primary), 76%);
-            --primary-50: hsl(var(--hue-primary), var(--saturation-primary), 84%);
-            --primary-60: hsl(var(--hue-primary), var(--saturation-primary), 90%);
+        --primary-10: hsl(var(--hue-primary), var(--saturation-primary), 32%);
+        --primary-20: hsl(var(--hue-primary), var(--saturation-primary), 40%);
+        --primary-30: hsl(var(--hue-primary), var(--saturation-primary), 56%);
+        --primary-40: hsl(var(--hue-primary), var(--saturation-primary), 76%);
+        --primary-50: hsl(var(--hue-primary), var(--saturation-primary), 84%);
+        --primary-60: hsl(var(--hue-primary), var(--saturation-primary), 90%);
 
-            /*** Secondary Color ***/
+        /*** Secondary Color ***/
 
-            --secondary-10: hsl(var(--hue-secondary), var(--saturation), 40%);
-            --secondary-20: hsl(var(--hue-secondary), var(--saturation), 48%);
-            --secondary-30: hsl(var(--hue-secondary), var(--saturation), 56%);
+        --secondary-10: hsl(var(--hue-secondary), var(--saturation), 40%);
+        --secondary-20: hsl(var(--hue-secondary), var(--saturation), 48%);
+        --secondary-30: hsl(var(--hue-secondary), var(--saturation), 56%);
 
-            /*** Accent Color ***/
+        /*** Accent Color ***/
 
-            --accent-10: hsl(var(--hue-accent), var(--saturation), 20%);
-            --accent-20: hsl(var(--hue-accent), var(--saturation), 28%);
-            --accent-30: hsl(var(--hue-accent), var(--saturation), 32%);
-        }
+        --accent-10: hsl(var(--hue-accent), var(--saturation), 20%);
+        --accent-20: hsl(var(--hue-accent), var(--saturation), 28%);
+        --accent-30: hsl(var(--hue-accent), var(--saturation), 32%);
     }
 }
