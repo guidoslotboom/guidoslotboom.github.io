@@ -20,6 +20,12 @@ const numberOfItems = items.length;
 // Sets it equal to the visible width and scroll amount
 const itemWidth = totalItemsWidth / numberOfItems;
 
+// Loop through the kids and iterate to add attributes
+for (let i = 1; i < slider.children.length; i++) {
+  slider.children[i].setAttribute('aria-label', `Slide ${i} of ${slider.children.length}`);
+  slider.children[i].setAttribute('id', `slide-${i}`);
+}
+
 // Adds click event listeners when prev button is clicked
 prevButton.addEventListener('click', () => {
   // Get the current scroll position in the slider
