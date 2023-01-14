@@ -21,9 +21,12 @@ const numberOfItems = items.length;
 const itemWidth = totalItemsWidth / numberOfItems;
 
 // Loop through the kids and iterate to add attributes
-for (let i = 1; i < slider.children.length; i++) {
-  slider.children[i].setAttribute('aria-label', `Slide ${i} of ${slider.children.length}`);
-  slider.children[i].setAttribute('id', `slide-${i}`);
+for (let i = 0; i < slider.children.length; i++) {
+  // Add 1 to each child to start it from 1
+  const itemNumber = i + 1;
+  // Set the attributes to each child
+  slider.children[i].setAttribute('aria-label', `Slide ${itemNumber} of ${numberOfItems}`);
+  slider.children[i].setAttribute('id', `slide-${itemNumber}`);
 }
 
 // Adds click event listeners when prev button is clicked
