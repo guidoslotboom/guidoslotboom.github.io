@@ -1,6 +1,6 @@
 // Selects DOM elements by class or id and stores them in variables
-const slider = document.getElementById('showcases').querySelector('.scroll-snap-slider');
-const sliderItems = slider.querySelectorAll('.item');
+const slider = document.getElementById('showcases').querySelector('.scroll-snap-items');
+const sliderItems = slider.querySelectorAll('.snap-item');
 const sliderNav = document.querySelector('.scroll-snap-nav');
 const sliderNavToPrev = sliderNav.querySelector('#scrollToPrev');
 const sliderNavToNext = sliderNav.querySelector('#scrollToNext');
@@ -32,7 +32,7 @@ const observer = new IntersectionObserver(handleSliderNav, options);
 // Loop through the kids and iterate to add attributes
 for (let i = 0; i < numberOfItems; i++) {
   // Set the item number to each slider item
-  sliderItems[i].id = `item-${i + 1}`;
+  sliderItems[i].id = `snap-item-${i + 1}`;
   slider.children[i].setAttribute('aria-label', `Slide ${i + 1} of ${numberOfItems}`);
   // Observe each slider item with the IntersectionObserver
   observer.observe(sliderItems[i]);
@@ -46,16 +46,16 @@ function handleSliderNav(entries) {
     // Check which items enter the viewport and add a class
     // And remove the class when leaving the viewport
     if (entry.isIntersecting) {
-      entry.target.classList.add('item-visible');
+      entry.target.classList.add('snap-item-visible');
     } else {
-      entry.target.classList.remove('item-visible');
+      entry.target.classList.remove('snap-item-visible');
     }
   });
 
   // Listen to a click event for the previous button
   sliderNavToPrev.addEventListener('click', () => {
     // If the first item has not the item-visible class name
-    if (!slider.querySelector('#item-1').classList.contains('item-visible')) {
+    if (!slider.querySelector('#snap-item-1').classList.contains('snap-item-visible')) {
       // Scroll to the previous item
       slider.scrollBy({
         left: -itemWidth,
@@ -71,7 +71,7 @@ function handleSliderNav(entries) {
   // Listen to a click event for the next button
   sliderNavToNext.addEventListener('click', () => {
     // If the last item has not the item-visible class name
-    if (!slider.querySelector(`#item-${sliderItems.length}`).classList.contains('item-visible')) {
+    if (!slider.querySelector(`#snap-item-${sliderItems.length}`).classList.contains('snap-item-visible')) {
       // Scroll to the next item
       slider.scrollBy({
         left: itemWidth,

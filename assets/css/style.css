@@ -666,14 +666,14 @@
         scroll-snap-stop: always;
     }
 
-    .scroll-showcases {
+    #showcases .scroll-snap-items {
         gap: var(--adapt-size-sm);
         padding-inline: var(--adapt-size-sm);
         padding-block-end: var(--adapt-size-sm);
         scroll-padding-inline: var(--adapt-size-sm);
     }
 
-    .scroll-showcases > * {
+    #showcases .scroll-snap-items > * {
         inline-size: min(480px,100%);
     }
 
