@@ -1091,6 +1091,51 @@
         transition-property: all;
         transition-timing-function: var(--timing-function);
     }
+
+    /*** Theme Toggle Icon ***/
+
+    #theme-toggle.button {
+        padding: var(--respon-size-5xs);
+    }
+
+    .theme-icon :is( .sun-and-moon, .sunbeams) {
+        transform-origin: center center;
+    }
+
+    .theme-icon :is( .sun-and-moon, .eclipse) {
+        transition: transform var(--duration-5) ease-in-out;
+    }
+
+    .theme-icon .sun-and-moon {
+        fill: currentColor;
+    }
+
+    .theme-icon .sunbeams {
+        transition: transform var(--duration-5) ease-in-out, opacity var(--duration-5) ease-in-out;
+    }
+
+    .sunbeams path {
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+    }
+
+    [aria-label="dark"] .eclipse {
+        transform: translate(-6px, 0px);
+    }
+
+    [aria-label="dark"] .sun-and-moon {
+        transform: scale(2);
+    }
+
+    [aria-label="dark"] .sunbeams {
+        opacity: 0;
+        transform: rotateZ(-45deg);
+    }
+
+    [aria-label="light"] .sunbeams {
+        opacity: 1;
+    }
 }
 
 @layer utilities {
