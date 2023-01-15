@@ -677,6 +677,12 @@
         inline-size: min(480px,100%);
     }
 
+    .scroll-snap-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--equal-size-xs);
+    }
+
     /*** Tabs ***/
 
     .tabs {
