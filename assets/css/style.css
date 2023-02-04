@@ -89,7 +89,7 @@
 
     a:link,
     a:visited {
-        color: var(--primary-20);
+        color: var(--primary-30);
         display: inline-block;
         font-weight: 450;
         transition: color var(--duration-1) var(--timing-function);
@@ -367,7 +367,7 @@
     /*** Button Color Default ***/
 
     .button {
-        border-color: var(--primary-50);
+        border-color: var(--primary-60);
         color: var(--primary-10);
     }
 
@@ -388,19 +388,19 @@
     /*** Button Color Primary ***/
 
     .button.color-primary {
-        border-color: var(--primary-20);
-        color: var(--primary-10);
+        border-color: var(--primary-30);
+        color: var(--primary-20);
     }
 
     .button.color-primary:hover {
-        --button-background: var(--primary-20);
-        border-color: var(--primary-20);
+        --button-background: var(--primary-30);
+        border-color: var(--primary-30);
         color: var(--theme-base);
     }
 
     .button.color-primary:active {
-        --button-background: var(--theme-contrast);
-        border-color: var(--theme-contrast);
+        --button-background: var(--primary-10);
+        border-color: var(--primary-10);
         color: var(--theme-base);
     }
 
