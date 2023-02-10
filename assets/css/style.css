@@ -902,6 +902,95 @@
         transform: translateY(-150%);
     }
 
+    /*** Feed ***/
+
+    .feed {
+        gap: var(--adapt-size-sm);
+    }
+
+    .feed .feed__list-posts {
+        display: flex;
+        flex-direction: column;
+        gap: var(--equal-size-sm);
+    }
+
+    .feed__post {
+        background-color: var(--theme-subtle);
+        border-radius: var(--adapt-size-sm);
+        display: grid;
+        gap: var(--equal-size-sm);
+    }
+
+    .feed__post > * {
+        padding-inline: var(--adapt-size-sm);
+    }
+
+    .feed__post > *:first-child {
+        padding-top: var(--adapt-size-sm);
+    }
+
+    .feed__post > *:last-child {
+        padding-bottom: var(--adapt-size-sm);
+    }
+
+    .post__header {
+        align-items: center;
+        display: grid;
+        column-gap: var(--equal-size-sm);
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: max-content;
+        inline-size: 100%;
+    }
+
+    .post__header > * {
+        grid-column: 2;
+    }
+
+    .post__avatar {
+        border: 1px solid hsla(0, 0%, var(--lightness), 0.08);
+        border-radius: 2rem;
+        grid-column: 1;
+        grid-row: span 2;
+        height: clamp(3rem, 4vw, 4rem);
+        width: clamp(3rem, 4vw, 4rem);
+    }
+
+    .post__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .post__author {
+        font-size: var(--respon-size-2xs);
+        font-weight: 600;
+    }
+
+    .post__publication {
+        color: var(--primary-20);
+        font-size: var(--respon-size-3xs);
+    }
+
+    .post__categories {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .post__categories li {
+        color: var(--primary-30);
+        font-family: var(--font-monospace);
+        font-size: var(--respon-size-3xs);
+        list-style: none;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .post__categories li:not(:last-child):after {
+        content: ", ";
+    }
+
     /*** Splashscreen ***/
 
     .page__content :has(.wrapper__splash) {
