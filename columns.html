@@ -30,7 +30,28 @@
                         <span>UI Designer &amp; Front-end Developer</span>
                     </div>
                 </a>
-                <button class="button text-sm" id="theme-toggle" title="Toggle between theme" aria-label="auto">Toggle</button>
+                <button id="theme-toggle" class="button" title="Toggle between theme" aria-label="auto">
+                    <span>
+                        <svg class="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" fill=""/>
+                            <mask class="moon" id="moon-mask">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                                <circle class="eclipse" cx="22" cy="11" r="5" fill="black"></circle>
+                              </mask>
+                            <circle class="sun-and-moon" cx="12" cy="12" r="5" mask="url(#moon-mask)"></circle>
+                            <g class="sunbeams">
+                                <path d="M12 2V4"/>
+                                <path d="M12 20V22"/>
+                                <path d="M22 12H20"/>
+                                <path d="M4 12H2"/>
+                                <path d="M19.071 4.92893L17.6568 6.34314"/>
+                                <path d="M6.34314 17.6569L4.92893 19.0711"/>
+                                <path d="M19.0711 19.0711L17.6569 17.6569"/>
+                                <path d="M6.34311 6.34314L4.92889 4.92893"/>
+                            </g>
+                        </svg> 
+                    </span>                       
+                </button>
             </div>
         </div>
     </header>
